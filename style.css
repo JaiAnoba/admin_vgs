@@ -89,13 +89,14 @@ body {
 
 .header h1 {
     font-size: 2rem;
-    margin-bottom: 0; 
+    padding-left: 15px;
 }
 
 .header .date {
     color: #666;
     font-size: 0.9rem; 
     text-align: left;
+    padding-left: 15px; 
 }
 
 .notifications {
@@ -202,7 +203,8 @@ body {
 .top-artists {
     width: 830px; 
     border-radius: 30px;
-    margin-top: -12rem;
+    padding: 25px;
+    margin: -12.6rem 0 0 0.8rem;
 }
 
 .top-artists h3 {
@@ -219,13 +221,19 @@ body {
 .artist-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 34px;
+    margin-bottom: 29px;
     text-align: justify;
+    padding: 5px;
+}
+
+.artist-list li:hover {
+    border-radius: 10px;
+    background-color: #fff;
 }
 
 .artist-list li img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     margin-right: 10px;
 }
@@ -263,7 +271,6 @@ body {
     padding: 35px;
     margin-inline: auto;
     border-radius: 30px;
-    background-color: #f1ecec;
 }
 
 .best-posts h3 {
@@ -319,9 +326,8 @@ body {
     width: 400px;
     height: 350px;
     border-radius: 20px;
-    background-color: #f1ecec;
     padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for better appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
 }
 
@@ -345,6 +351,5 @@ canvas {
     padding: 25px;
     font-size: 1.1rem;
     border-radius: 30px;
-    background-color: #f1ecec;
     grid-column: span 1;
 }
