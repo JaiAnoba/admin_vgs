@@ -3,42 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <title>Riley</title>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>#INSIDEOUT</header>
-    
-    <div class="wrapper">
-        <section class="home">
-            <div class="description">
-                <h3 class="medium">MEET THE</h3>
-                <h1 class="large">LITTLE VOICES INSIDE RILEY'S HEAD</h1>
-                <p class="small">The emotions live in Headquarters, the control center inside 
-                    Riley's mind, where they help advise her through everyday life.</p>
-            </div>
-
-            <div class="head">
-                <img src="pics/log.png">
-            </div>
-
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
             <div class="logo">
-                <img src="pics/logo.png">
+                <img src="pics/worxist.png" alt="Logo">
             </div>
+            <ul class="nav">
+                <li class="active"><i class='bx bxs-dashboard' style='color:#ffffff'></i><a href="#">Dashboard</a></li>
+                <li><i class='bx bxs-user-account' style='color:#ffffff' ></i><a href="#">Accounts</a></li>
+                <li><i class='bx bxs-blanket'></i><a href="#">Posts</a></li>
+                <li><i class='bx bxs-cog' style='color:#ffffff' ></i><a href="#">Settings</a></li>
+            </ul>
+            <a href="#" class="logout"><i class='bx bx-log-out' style='color:#ffffff' ></i>Logout</a>
+        </aside>
 
-            <div class="dots">
-                <div class="dot green"></div>
-                <div class="dot yellow"></div>
-                <div class="dot red"></div>
-                <div class="dot purple"></div>
-                <div class="dot blue"></div>
-            </div>
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1>Dashboard</h1>
+                <span>Saturday, 28 Sept. 2024</span>
+                <div class="notifications">
+                    <span class="bell-icon" id="notification-bell"><i class='bx bxs-bell' undefined ></i></span>
+                    <div class="notification-dropdown" id="notification-dropdown">
+                        <ul id="notification-list"></ul>
+                    </div>
+                    <span class="user-icon">👤</span>
+                </div>
+            </header>
 
-        </section>
+            <section class="overview">
+                <div class="stat-box">
+                    <h3>Accounts</h3>
+                    <p>219,3k</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Requests</h3>
+                    <p>1.5k</p>
+                </div>
+            </section>
 
-        <section class="emotions">
-            
-        </section>
+            <section class="main-content">
+                <div class="top-artists">
+                    <h3>Top Artists</h3>
+                    <ul class="artist-list">
+                        <li>
+                            <img src="artist1.png" alt="Artist Image">
+                            <span class="artist-name">Jera Anderson</span>
+                            <span class="artist-handle">@jeraander</span>
+                            <span class="artist-percentage">35%</span>
+                        </li>
+                        <li>
+                            <img src="artist2.png" alt="Artist Image">
+                            <span class="artist-name">Jandeb Laplap</span>
+                            <span class="artist-handle">@jandebdab</span>
+                            <span class="artist-percentage">18%</span>
+                        </li>
+                        <li>
+                            <img src="artist3.png" alt="Artist Image">
+                            <span class="artist-name">Jimmy Boy</span>
+                            <span class="artist-handle">@jimmyboy</span>
+                            <span class="artist-percentage">25%</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="view-more">View More</a>
+                </div>
+
+                <div class="best-posts">
+                    <h3>Best Performing Posts</h3>
+                    <div class="post">
+                        <img src="post1.png" alt="Post Image">
+                        <p>Likes: 7.2k</p>
+                    </div>
+                    <div class="post">
+                        <img src="post2.png" alt="Post Image">
+                        <p>Likes: 6.4k</p>
+                    </div>
+                    <div class="post">
+                        <img src="post3.png" alt="Post Image">
+                        <p>Likes: 3.5k</p>
+                    </div>
+                </div>
+
+                <div class="post-stats">
+                    <h3>Post Stats</h3>
+                    <canvas id="postStatsChart"></canvas>
+                </div>
+
+                <div class="activity">
+                    <h3>Activity</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </section>
+        </main>
     </div>
+
+    <!-- Chart.js Script -->
+    <script>
+        // Post Stats Chart
+        const ctx1 = document.getElementById('postStatsChart').getContext('2d');
+        const postStatsChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Series 1', 'Series 2', 'Series 3'],
+                datasets: [{
+                    label: 'Likes',
+                    data: [3000, 6000, 5000],
+                    backgroundColor: ['#ff5959', '#007bff', '#28a745'],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Activity Chart
+        const ctx2 = document.getElementById('activityChart').getContext('2d');
+        const activityChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'],
+                datasets: [{
+                    label: 'Series 1',
+                    data: [30, 40, 25, 50, 45],
+                    borderColor: '#ff5959',
+                    fill: false
+                }, {
+                    label: 'Series 2',
+                    data: [35, 30, 45, 40, 50],
+                    borderColor: '#007bff',
+                    fill: false
+                }, {
+                    label: 'Series 3',
+                    data: [20, 25, 40, 30, 35],
+                    borderColor: '#28a745',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
