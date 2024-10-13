@@ -12,6 +12,8 @@ body {
 }
 
 .dashboard {
+    max-width: 1900px;
+    height: 1000px;
     display: flex;
 }
 
@@ -19,10 +21,9 @@ body {
 .sidebar {
     width: 200px;
     min-width: 200px;
-    max-height: 960px;
+    max-height: 990px;
     flex-shrink: 0;
     background-color: #a20d0d;
-    padding: 20px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -33,46 +34,79 @@ body {
 
 .sidebar .logo img {
     display: flex;
-    max-width: 50%;
+    max-width: 40%;
     margin-top: 20px;
     margin-inline: auto;
 }
 
+/* Navigation Styles */
 .sidebar .nav {
     list-style: none;
     margin-top: -4rem;
 }
 
 .sidebar .nav li {
-    margin: 0 15px 75px 0;
+    margin: 0 0 40px 20px;
     display: flex;
-    align-items: center; 
+    align-items: center;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 10px 0 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar .nav li i {
-    font-size: 1.5rem; 
-    margin-inline: 10px; 
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 .sidebar .nav li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
+.sidebar .nav li:hover {
+    background-color: #fff;
+}
+
+.sidebar .nav li:hover i,
+.sidebar .nav li:hover a {
+    color: #a20d0d; 
+}
+
+/* Logout button */
 .sidebar .logout {
     color: #fff;
     text-decoration: none;
-    margin-top: 20px;
+    margin: 20px 0 20px 20px;
     display: flex;
-    align-items: center; 
+    align-items: center;
+    position: relative;
+    padding: 10px 15px;
+    border-radius: 10px 0 0 10px;
     font-size: 1.1rem;
+    transition: background-color 0.3s ease;
 }
 
-.sidebar .logout i {   
+.sidebar .logout i {
     font-size: 1.5rem;
-    margin-inline: 10px; 
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
 }
+
+.sidebar .logout:hover {
+    color: #a20d0d;
+    background-color: #fff; 
+}
+
+.sidebar .logout:hover i {
+    color: #a20d0d;
+}
+
 
 /* Main Content */
 .content {
@@ -89,20 +123,18 @@ body {
 
 .header h1 {
     font-size: 2rem;
-    padding-left: 15px;
 }
 
 .header .date {
     color: #666;
     font-size: 0.9rem; 
-    text-align: left;
-    padding-left: 15px; 
+    text-align: left; 
 }
 
 .notifications {
     display: flex;
     align-items: center;
-    margin-left: 102rem;
+    margin-left: 93rem;
     margin-top: -3.5rem;
 }
 
@@ -123,9 +155,8 @@ body {
 /* TOTAL NO. */
 .overview {
     display: flex;
-    gap: 90px;
+    gap: 45px;
     margin-top: 50px;
-    margin-left: 45px;
 }
 
 .acc, .request {
@@ -133,7 +164,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-left: 80px;
+    padding-left: 73px;
 }
 
 /* Stat Box */
@@ -158,7 +189,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: #000;
-    margin-top: 10px;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -189,8 +220,8 @@ body {
 /* Main Content */
 .main-content {
     display: flex;
-    gap: 50px;
-    margin: -105px 0 0 55rem;
+    gap: 18rem;
+    margin: -105px 0 0 390px;
 }
 
 /* Top Artists*/
@@ -200,15 +231,16 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Top Artists Section */
 .top-artists {
-    width: 830px; 
+    width: 700px; 
     border-radius: 30px;
     padding: 25px;
-    margin: -12.6rem 0 0 0.8rem;
+    margin: -13rem 0 0 0;
 }
 
 .top-artists h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #91041b;
     margin-bottom: 15px;
 }
@@ -216,11 +248,13 @@ body {
 .artist-list {
     list-style: none;
     padding-left: 0;
+    margin-top: 20px;
 }
 
 .artist-list li {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Space between the name/handle and percentage */
     margin-bottom: 29px;
     text-align: justify;
     padding: 5px;
@@ -232,28 +266,33 @@ body {
 }
 
 .artist-list li img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+/* Artist Info Grouping */
+.artist-info {
+    display: flex;
+    flex-direction: column; /* Stack name and handle vertically */
 }
 
 .artist-name {
     font-size: 1rem;
     font-weight: bold;
-    margin-left: 10px;
 }
 
 .artist-handle {
     font-size: 0.9rem;
     color: #888;
-    margin-left: 220px;
 }
 
+/* Artist Percentage */
 .artist-percentage {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-left: 220px;
+    margin-left: auto; /* Ensure it stays on the right */
 }
 
 .view-more {
@@ -327,6 +366,7 @@ body {
     height: 350px;
     border-radius: 20px;
     padding: 25px;
+    margin: 0 10px 0 -600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
 }
@@ -345,9 +385,9 @@ canvas {
 
 /* Activity Section */
 .activity {
-    margin: -395px 0 0 900px;
+    margin: -430px 0 0 745px;
     width: 865px;
-    height: 395px;
+    height: 430px;
     padding: 25px;
     font-size: 1.1rem;
     border-radius: 30px;
