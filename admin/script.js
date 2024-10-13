@@ -50,3 +50,14 @@ const activityChart = new Chart(ctxActivity, {
         }
     }
 });
+
+// COLLAPSED SIDEBAR
+document.addEventListener("DOMContentLoaded", function() {
+    const logo = document.querySelector('.logo');
+    const sidebar = document.querySelector('.sidebar');
+
+    // Add event listener for the logo click
+    logo.addEventListener('click', function() {
+        sidebar.classList.toggle('collapsed');
+    });
+});

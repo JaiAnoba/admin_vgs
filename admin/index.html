@@ -160,6 +160,20 @@
         </main>
     </div>
 
+    <!-- Sidebar Collapse js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logo = document.querySelector('.logo');
+            const sidebar = document.querySelector('.sidebar');
+    
+            // Add event listener for the logo click
+            logo.addEventListener('click', function() {
+                sidebar.classList.toggle('collapsed');
+            });
+        });
+    </script>
+    
+
     <!-- Chart.js Script -->
     <script>
         // Post Stats Chart
@@ -303,6 +317,6 @@
         });
 
     </script>
-    <!-- <script src="script.js"></script> -->
+    
 </body>
 </html>
