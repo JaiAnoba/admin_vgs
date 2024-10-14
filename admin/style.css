@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: white;
+    display: flex;
 }
 
 .dashboard {
@@ -16,13 +16,13 @@ body {
     height: 1000px;
     display: flex;
 }
+
 /* Sidebar expanded by default */
 .sidebar {
     width: 200px;
     min-width: 200px;
     max-height: 990px;
-    flex-shrink: 0;
-    background-color: #a20d0d;
+    background: #a20d0d;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -30,12 +30,6 @@ body {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     transition: width 0.3s ease; 
-}
-
-/* Sidebar in collapsed state */
-.sidebar.collapsed {
-    width: 80px;
-    min-width: 80px;
 }
 
 /* Navigation Styles */
@@ -58,24 +52,12 @@ body {
     position: relative;
     padding: 10px 15px;
     border-radius: 10px 0 0 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: 0.3s ease, color 0.3s ease;
 }
 
 .sidebar .nav li i {
     font-size: 1.5rem;
     margin-right: 10px;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-/* Hide the text when sidebar is collapsed */
-.sidebar.collapsed .nav li a {
-    display: none;
-}
-
-/* Adjust icon alignment in collapsed state */
-.sidebar.collapsed .nav li i {
-    margin-right: 0;
 }
 
 .sidebar .nav li a {
@@ -86,14 +68,13 @@ body {
 }
 
 .sidebar .nav li:hover {
-    background-color: #fff;
+    background: #fff;
 }
 
 .sidebar .nav li:hover i,
 .sidebar .nav li:hover a {
     color: #a20d0d;
 }
-
 
 /* Logout button */
 .sidebar .logout {
@@ -106,29 +87,29 @@ body {
     padding: 10px 15px;
     border-radius: 10px 0 0 10px;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .sidebar .logout i {
     font-size: 1.5rem;
     margin-right: 10px;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .sidebar .logout:hover {
     color: #a20d0d;
-    background-color: #fff; 
+    background: #fff; 
 }
 
 .sidebar .logout:hover i {
     color: #a20d0d;
 }
 
-
 /* Main Content */
 .content {
     flex: 1;
     padding: 40px;
+    transition: margin-left 0.3s ease;
 }
 
 /* HEADER */
