@@ -26,14 +26,14 @@ let postStatsCanvas = document.getElementById('postStatsChart').getContext('2d')
 let postStatsChart = new Chart(postStatsCanvas, {
     type: 'bar', // Chart type
     data: {
-        labels: ['Item 1', 'Item 2', 'Item 3'], // Labels for each bar
+        labels: ['Item 1', 'Item 2', 'Item 3'], 
         datasets: [
             {
-                label: 'Saved', // Dataset label
-                data: [5, 10, 15], // Data points
-                backgroundColor: '#d68b8b', // Bar color
-                borderRadius: 20, // Rounded corners
-                barThickness: 40 // Bar width
+                label: 'Saved',
+                data: [5, 10, 15],
+                backgroundColor: '#d68b8b', 
+                borderRadius: 20, 
+                barThickness: 40 
             },
             {
                 label: 'Likes', 
@@ -54,9 +54,9 @@ let postStatsChart = new Chart(postStatsCanvas, {
                     boxWidth: 25,
                     font: {
                         size: 14,
-                        family: 'Poppins', // Font style
+                        family: 'Poppins', 
                     },
-                    color: '#000' // Text color
+                    color: '#000' 
                 }
             }
         },
@@ -93,7 +93,6 @@ let postStatsChart = new Chart(postStatsCanvas, {
 
 // --- Activity Chart ---
 
-// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', function () {
     // Get the canvas for the Activity Chart
     let activityCanvas = document.getElementById('activityChart').getContext('2d');
@@ -104,11 +103,11 @@ document.addEventListener('DOMContentLoaded', function () {
     activityCanvas.canvas.height = activityCanvas.canvas.clientHeight * dpr;
     activityCanvas.scale(dpr, dpr);
 
-    // Create a line chart
+    // Line chart
     let activityChart = new Chart(activityCanvas, {
         type: 'line', // Chart type
         data: {
-            labels: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'], // Labels for the chart
+            labels: ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'], 
             datasets: [
                 {
                     label: 'Posts', 
@@ -171,4 +170,138 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+});
+
+
+// POPUP DELETE MESSAGE IN MANAGE ACOUNTS
+document.addEventListener('DOMContentLoaded', function () {
+    const trashIcons = document.querySelectorAll('.bx-trash-alt');
+    const popup = document.getElementById('popup');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const continueBtn = document.getElementById('continueBtn');
+  
+    for (let i = 0; i < trashIcons.length; i++) {
+      trashIcons[i].addEventListener('click', function () {
+        // Show the popup 
+        if (popup.style.display === 'none' || popup.style.display === '') {
+          popup.style.display = 'flex';
+        }
+      });
+    }
+  
+    // Cancel button click event
+    cancelBtn.addEventListener('click', function () {
+      // Hide the popup
+      if (popup.style.display === 'flex') {
+        popup.style.display = 'none';
+      }
+    });
+  
+    // Continue button click event
+    continueBtn.addEventListener('click', function () {
+      alert('User deleted successfully!');
+  
+      if (popup.style.display === 'flex') {
+        popup.style.display = 'none';
+      }
+    });
+});
+
+
+//FILTER IN SORTING USER NAMES
+document.addEventListener('DOMContentLoaded', function () {
+    const filterButton = document.querySelector('.bx-filter');
+    const tableBody = document.querySelector('.user-table tbody');
+  
+    filterButton.addEventListener('click', function () {
+        const rows = tableBody.querySelectorAll('tr');
+        
+        // Array to store name and corresponding row
+        const rowsArray = [];
+        for (let i = 0; i < rows.length; i++) {
+
+          const nameCell = rows[i].querySelector('.name');
+          const nameText = nameCell.textContent.trim();
+        
+          // Push the name and the corresponding row to the array
+          rowsArray.push({ name: nameText, row: rows[i] });
+        }
+      
+        // Alphabetical order
+        for (let i = 0; i < rowsArray.length; i++) {
+          for (let j = 0; j < rowsArray.length - 1; j++) {
+            if (rowsArray[j].name > rowsArray[j + 1].name) {
+              // Swap the elements
+              const temp = rowsArray[j];
+              rowsArray[j] = rowsArray[j + 1];
+              rowsArray[j + 1] = temp;
+            }
+          }
+        }
+      
+        tableBody.innerHTML = '';
+      
+        for (let i = 0; i < rowsArray.length; i++) {
+          tableBody.appendChild(rowsArray[i].row);
+        }
+    });
+});
+  
+
+//SEARCH BAR FOR USERS
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBar = document.querySelector('.search-bar');
+    const tableRows = document.querySelectorAll('.user-table tbody tr');
+  
+    searchBar.addEventListener('input', () => {
+        const query = searchBar.value.toLowerCase();
+        
+        // Loop sa tanan table rows
+        for (let i = 0; i < tableRows.length; i++) {
+            const nameCell = tableRows[i].querySelector('.name');
+            const name = nameCell.textContent.toLowerCase();
+            
+            if (query === '' || name.includes(query)) {
+              tableRows[i].style.display = '';
+            } else {
+              tableRows[i].style.display = 'none';
+            }
+        }
+    });
+});
+  
+
+//TOTAL NO. OF ALL USERS
+document.addEventListener("DOMContentLoaded", function() {
+    const tableRows = document.querySelectorAll('.user-table tbody tr');
+    
+    let rowCount = 0;
+
+    for (let i = 0; i < tableRows.length; i++) {
+        const cells = tableRows[i].querySelectorAll('td');
+        
+        let hasContent = false;
+        
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.trim() !== "" || cells[j].querySelector('img') !== null) {
+                hasContent = true;
+                break;  
+            }
+        }
+        
+        if (hasContent) {
+            rowCount++;
+        }
+    }
+
+    const totalUsersElement = document.querySelector('.total-users');
+    const rNumberElement = document.querySelector('.a_number');
+
+    if (totalUsersElement) {
+        totalUsersElement.textContent = rowCount;
+    }
+
+    if (rNumberElement) {
+        rNumberElement.textContent = rowCount;
+    }
 });

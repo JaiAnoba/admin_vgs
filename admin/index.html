@@ -39,23 +39,19 @@
             </section>   
 
             <!-- DASHBOARD -->
-            <section class="content-wrapper1" style="display: none;">
+            <section class="content-wrapper1">
                 <div class="overview">
                     <div class="acc">
                         <div class="stat-box">
                             <h3>Accounts <span class="badge red">5</span></h3>
                         </div>
-                        <div class="a_number">
-                            <p>219,3k</p>
-                        </div>
+                        <div class="a_number"></div>
                     </div>
                     <div class="request">
                         <div class="stat-box">
                             <h3>Posts <span class="badge blue">3</span></h3>
                         </div>
-                        <div class="r_number">
-                            <p>1.5k</p>
-                        </div>
+                        <div class="r_number">0</div>
                     </div>
                 </div>   
 
@@ -165,11 +161,11 @@
             <!-- MANAGE USERS -->
             <section class="content-wrapper2" style="display: none;">
                 <div class="header-controls">
-                    <i class='bx bxs-pencil'></i>
+                    <!-- <i class='bx bxs-pencil'></i> -->
                     <h2>Total Users <span class="total-users"> 219</span></h2>
                     <div class="table-controls">
                       <input type="text" class="search-bar" placeholder="Search">
-                      <i class='bx bx-filter'> <p class="filter-btn"> Filter</p></i>
+                      <i class='bx bx-filter'><p class="filter-btn">Filter</p></i>
                     </div>
                 </div>
 
@@ -193,7 +189,6 @@
                             <td class="email">@jeraunder</td>
                             <td><span class="status inactive">Inactive</span></td>
                             <td>
-                              <i class='bx bx-block'></i>
                               <i class='bx bx-trash-alt' ></i>
                             </td>
                         </tr>
@@ -204,7 +199,6 @@
                             <td class="email">@jeraunder</td>
                             <td><span class="status active">Active</span></td>
                             <td>
-                              <i class='bx bx-block'></i>
                               <i class='bx bx-trash-alt' ></i>
                             </td>
                         </tr>
@@ -215,18 +209,30 @@
                             <td class="email">@jeraunder</td>
                             <td><span class="status banned">Banned</span></td>
                             <td>
-                              <i class='bx bx-block'></i>
                               <i class='bx bx-trash-alt' ></i>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <!-- Popup Message for Delete Icon -->
+                <div class="popup" id="popup">
+                    <div class="popup-content">
+                        <i class='bx bx-trash'></i>
+                        <h2>Delete User?</h2>
+                        <p>Are you sure you want to delete this user? 
+                            <br>This action is irreversible and will permanently erase the user data.</p>
+                        <div class="popup-btns">
+                          <button class="continue-btn" id="continueBtn">Continue</button>
+                          <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- POSTS REQUESTS -->
-            <section class="content-wrapper2">
+            <section class="content-wrapper3"  style="display: none;">
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a1.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -242,7 +248,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a2.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -258,7 +264,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a3.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -274,7 +280,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a1.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -290,7 +296,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a2.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -306,7 +312,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a3.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -322,7 +328,7 @@
                     </div>
                 </div>  
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a1.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -338,7 +344,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a2.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -354,7 +360,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a3.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -370,7 +376,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="pics/1672369246156.jpg" alt="Banner" class="banner-image">
+                    <img src="pics/a1.jpg" alt="Banner" class="banner-image">
                     <div class="card-content">
                         <div class="profile">
                             <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
@@ -384,8 +390,7 @@
                             <button class="btn decline-btn">Decline</button>
                         </div>
                     </div>
-                </div>
-                
+                </div>    
             </section>
 
         </section>
