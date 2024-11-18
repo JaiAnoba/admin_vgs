@@ -410,12 +410,13 @@ canvas {
 }
 
 .header-controls h2 {
-    font-size: 24px;
-    margin: 0 980px 0 15px;
+    font-size: 1.3rem;
+    margin: 0 990px 0 35px;
 }
 
 .total-users {
     color: #a20d0d;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-left: 20px;
 }
@@ -445,9 +446,9 @@ canvas {
 }
 
 .filter-btn {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-top: 7px;
+    margin-top: 10px;
 }
 
 .bx-filter:hover {
@@ -500,11 +501,13 @@ canvas {
 }
 
 .status.active {
-  background-color: #4caf50;
+  background-color: #9ce4a6;
+  color: #033a08;
 }
 
 .status.inactive {
-  background-color: #f44336;
+  background-color: #f5babc;
+  color: #a20d0d;
 }
 
 /* Action Buttons */
