@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="dashboard"> 
+    <main class="dashboard"> 
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
@@ -25,140 +25,194 @@
             <a href="#" class="logout"><i class='bx bxs-log-out'></i>Logout</a>
         </aside>
 
-        <!-- Main Content -->
-        <main class="content">
-            <header class="header">
-                <h1>Dashboard</h1>
-                <span class="date" id="current-date"></span>
-                <div class="notifications">
-                    <span class="bell-icon" id="notification-bell"><i class='bx bxs-bell' undefined ></i></span>
-                    <img src="pics/1672369246156.jpg" class="user">
-                </div>
-            </header>
-
-            <section class="overview">
-                <div class="acc">
-                    <div class="stat-box">
-                        <h3>Accounts <span class="badge red">5</span></h3>
+            <!-- Main Content -->
+        <section class="main-wrapper">
+            <section class="header-wrapper">
+                <header class="header">
+                    <h1>Dashboard</h1>
+                    <span class="date" id="current-date"></span>
+                    <div class="notifications">
+                        <span class="bell-icon" id="notification-bell"><i class='bx bxs-bell' undefined ></i></span>
+                        <img src="pics/1672369246156.jpg" class="user">
                     </div>
-                    <div class="a_number">
-                        <p>219,3k</p>
-                    </div>
-                </div>
-                <div class="request">
-                    <div class="stat-box">
-                        <h3>Requests <span class="badge blue">3</span></h3>
-                    </div>
-                    <div class="r_number">
-                        <p>1.5k</p>
-                    </div>
-                </div>
+                </header>
             </section>   
 
-            <section class="main-content">
-                <div class="best-posts">
-                    <h3>Best Performing Posts</h3>
-                    <div class="post">
-                        <img src="pics/a1.jpg" alt="Post Image">
-                        <div class="post-info">
-                            <p>Likes</p>
-                            <div class="likes">
-                                <span class="heart">❤</span>
-                                <span class="count">7.2k</span>
+            <section class="content-wrapper1" style="display: none;">
+                <div class="overview">
+                    <div class="acc">
+                        <div class="stat-box">
+                            <h3>Accounts <span class="badge red">5</span></h3>
+                        </div>
+                        <div class="a_number">
+                            <p>219,3k</p>
+                        </div>
+                    </div>
+                    <div class="request">
+                        <div class="stat-box">
+                            <h3>Posts <span class="badge blue">3</span></h3>
+                        </div>
+                        <div class="r_number">
+                            <p>1.5k</p>
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="main-content">
+                    <div class="best-posts">
+                        <h3>Best Performing Posts</h3>
+                        <div class="post">
+                            <img src="pics/a1.jpg" alt="Post Image">
+                            <div class="post-info">
+                                <p>Likes</p>
+                                <div class="likes">
+                                    <span class="heart">❤</span>
+                                    <span class="count">7.2k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <img src="pics/a2.jpg" alt="Post Image">
+                            <div class="post-info">
+                                <p>Likes</p>
+                                <div class="likes">
+                                    <span class="heart">❤</span>
+                                    <span class="count">6.4k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <img src="pics/a3.jpg" alt="Post Image">
+                            <div class="post-info">
+                                <p>Likes</p>
+                                <div class="likes">
+                                    <span class="heart">❤</span>
+                                    <span class="count">3.5k</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="post">
-                        <img src="pics/a2.jpg" alt="Post Image">
-                        <div class="post-info">
-                            <p>Likes</p>
-                            <div class="likes">
-                                <span class="heart">❤</span>
-                                <span class="count">6.4k</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post">
-                        <img src="pics/a3.jpg" alt="Post Image">
-                        <div class="post-info">
-                            <p>Likes</p>
-                            <div class="likes">
-                                <span class="heart">❤</span>
-                                <span class="count">3.5k</span>
-                            </div>
-                        </div>
+
+                    <div class="post-stats">
+                        <h3>Post Stats</h3>
+                        <canvas id="postStatsChart"></canvas>
                     </div>
                 </div>
 
-                <div class="post-stats">
-                    <h3>Post Stats</h3>
-                    <canvas id="postStatsChart"></canvas>
+                <div class="top-artists">
+                    <h3>Top 10 Artists</h3>
+                    <ul class="artist-list">
+                        <li>
+                            <img src="pics/1672369246156.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jera Anderson</span>
+                                <span class="artist-handle">@jeraander</span>
+                            </div>
+                            <span class="artist-percentage">35%</span>
+                        </li>
+                        <li>
+                            <img src="pics/mona.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jandeb Laplap</span>
+                                <span class="artist-handle">@jandebdab</span>
+                            </div>
+                            <span class="artist-percentage">18%</span>
+                        </li>
+                        <li>
+                            <img src="pics/SHREK.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jimmy Boy</span>
+                                <span class="artist-handle">@jimmyboy</span>
+                            </div>
+                            <span class="artist-percentage">25%</span>
+                        </li>
+                        <li>
+                            <img src="pics/1672369246156.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jera Anderson</span>
+                                <span class="artist-handle">@jeraander</span>
+                            </div>
+                            <span class="artist-percentage">35%</span>
+                        </li>
+                        <li>
+                            <img src="pics/mona.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jandeb Laplap</span>
+                                <span class="artist-handle">@jandebdab</span>
+                            </div>
+                            <span class="artist-percentage">18%</span>
+                        </li>
+                        <li>
+                            <img src="pics/SHREK.jpg" alt="Artist Image">
+                            <div class="artist-info">
+                                <span class="artist-name">Jimmy Boy</span>
+                                <span class="artist-handle">@jimmyboy</span>
+                            </div>
+                            <span class="artist-percentage">25%</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="view-more">View More</a>
+                </div>
+
+
+                <div class="activity">
+                    <h3>Activity</h3>
+                    <canvas id="activityChart"></canvas>
                 </div>
             </section>
 
-            <section class="top-artists">
-                <h3>Top 10 Artists</h3>
-                <ul class="artist-list">
-                    <li>
-                        <img src="pics/1672369246156.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jera Anderson</span>
-                            <span class="artist-handle">@jeraander</span>
-                        </div>
-                        <span class="artist-percentage">35%</span>
-                    </li>
-                    <li>
-                        <img src="pics/mona.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jandeb Laplap</span>
-                            <span class="artist-handle">@jandebdab</span>
-                        </div>
-                        <span class="artist-percentage">18%</span>
-                    </li>
-                    <li>
-                        <img src="pics/SHREK.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jimmy Boy</span>
-                            <span class="artist-handle">@jimmyboy</span>
-                        </div>
-                        <span class="artist-percentage">25%</span>
-                    </li>
-                    <li>
-                        <img src="pics/1672369246156.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jera Anderson</span>
-                            <span class="artist-handle">@jeraander</span>
-                        </div>
-                        <span class="artist-percentage">35%</span>
-                    </li>
-                    <li>
-                        <img src="pics/mona.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jandeb Laplap</span>
-                            <span class="artist-handle">@jandebdab</span>
-                        </div>
-                        <span class="artist-percentage">18%</span>
-                    </li>
-                    <li>
-                        <img src="pics/SHREK.jpg" alt="Artist Image">
-                        <div class="artist-info">
-                            <span class="artist-name">Jimmy Boy</span>
-                            <span class="artist-handle">@jimmyboy</span>
-                        </div>
-                        <span class="artist-percentage">25%</span>
-                    </li>
-                </ul>
-                <a href="#" class="view-more">View More</a>
-            </section>
-            
+            <section class="content-wrapper2">
+                <div class="header-controls">
+                    <h2>Total Users <span class="total-users"> 219</span></h2>
+                    <div class="table-controls">
+                      <input type="text" class="search-bar" placeholder="Search">
+                      <i class='bx bx-filter'> <p class="filter-btn"> Filters</p></i>
+                    </div>
+                </div>
 
-            <section class="activity">
-                <h3>Activity</h3>
-                <canvas id="activityChart"></canvas>
+                <!-- Table -->
+                <table class="user-table">
+                  <thead>
+                    <tr>
+                      <th>Photo</th>
+                      <th>Name</th>
+                      <th>Mobile no.</th>
+                      <th>Email</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><img src="pics/1672369246156.jpg" alt="Photo" class="user-photo"></td>
+                      <td class="name">Jera Anderson</td>
+                      <td class="mobile">123456789</td>
+                      <td class="email">@jeraunder</td>
+                      <td><span class="status inactive">Inactive</span></td>
+                      <td>
+                        <i class='bx bx-block'></i>
+                        <i class='bx bx-trash-alt' ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img src="pics/a1.jpg" alt="Photo" class="user-photo"></td>
+                      <td class="name">Jandeb Laplap</td>
+                      <td class="mobile">123456789</td>
+                      <td class="email">@jeraunder</td>
+                      <td><span class="status active">Active</span></td>
+                      <td>
+                        <i class='bx bx-block'></i>
+                        <i class='bx bx-trash-alt' ></i>
+                      </td>
+                    </tr>
+                    <!-- Repeat rows as needed -->
+                  </tbody>
+                </table>
             </section>
-            
-        </main>
-    </div>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
     
