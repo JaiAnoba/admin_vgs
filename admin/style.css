@@ -406,12 +406,20 @@ canvas {
 /* MANAGE ACCOUNTS */
 .header-controls {
     display: flex;
+    padding: 10px;
     flex-direction: row;
 }
 
 .header-controls h2 {
     font-size: 1.3rem;
-    margin: 0 990px 0 35px;
+    margin: 0 995px 0 0;
+}
+
+.bxs-pencil {
+    height: 30px;
+    font-size: 1.4rem;
+    margin: 10px 20px 0 0;
+    cursor: pointer;
 }
 
 .total-users {
@@ -510,6 +518,11 @@ canvas {
   color: #a20d0d;
 }
 
+.status.banned {
+    background-color: #bfbdbc;
+    color: #545454;
+  }
+
 /* Action Buttons */
 .bx-block {
   font-size: 1.5rem;
@@ -528,3 +541,97 @@ canvas {
 .bx-trash-alt:hover {
     color: #b20f29;
 }
+
+/* POSTS REQUESTS */
+.content-wrapper2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+    gap: 20px;
+    width: 1600px;
+    height: 840px;
+    margin: 0 auto;
+  }
+  
+  /* Card Styles */
+  .card {
+    height: 300px;
+    padding: 10px;
+    background-color: #f1ecec;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  /* Banner Image */
+  .banner-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  /* Card Content */
+  .card-content {
+    padding: 15px;
+  }
+  
+  /* Profile Section */
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profile-info .name {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .profile-info .username {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0;
+  }
+  
+  /* Actions Section */
+  .actions {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .approve-btn {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .approve-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .decline-btn {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .decline-btn:hover {
+    background-color: #e53935;
+  }
+  
