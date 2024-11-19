@@ -229,7 +229,7 @@
             </section>
 
             <!-- POSTS REQUESTS -->
-            <section class="content-wrapper3">
+            <section class="content-wrapper3" style="display: none;">
                 <div class="card">
                     <img src="pics/a1.jpg" class="banner-image">
                     <div class="card-content">
@@ -317,7 +317,198 @@
 
             <!-- SETTINGS -->
              <section class="content-wrapper4">
-
+                <div class="settings-container">
+                    <!-- Sidebar -->
+                    <div class="s_sidebar">
+                        <h1>Settings</h1>
+                        <ul>
+                            <li><a href="#s-profile-section" id="profile-link">Public Profile</a></li>
+                            <li><a href="#account-section" id="account-link">Account Settings</a></li>
+                            <li><a href="#notifications-section" id="notifications-link">Notifications</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="s_content" id="content">
+                        <!-- Public Profile Section -->
+                        <div id="s-profile-section" class="ss_section active">
+                            <h3>My Profile</h3>
+                            <div class="s_profile">
+                                <!-- Profile Image Section -->
+                                <div class="s_profile-image">
+                                    <img src="pics/mona.jpg" alt="Profile" class="profile-pic">
+                                    <div class="s_text">
+                                        <h4>Upload new image</h4>
+                                        <p class="file-size">Max file size - 10mb</p>
+                                    </div>
+                                    <div class="image-buttons">
+                                        <button class="upload-btn">Upload</button>
+                                        <button class="remove-btn">Remove image</button>
+                                    </div>
+                                </div>
+                        
+                                <!-- Profile Form Section -->
+                                <form>
+                                    <label>Username</label>
+                                    <input type="text" value="Angel" class="input-field">
+                                    
+                                    <label>Role</label>
+                                    <input type="text" value="Team Leader" class="input-field" disabled>
+                                    
+                                    <label>Bio</label>
+                                    <textarea placeholder="Write a short introduction..." class="textarea-field"></textarea>
+                                    
+                                    <div class="form-buttons">
+                                        <button type="submit" class="save-btn">Save Changes</button>
+                                        <button type="reset" class="clear-btn">Clear all</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    
+                        <!-- Account Settings Section -->
+                        <div id="account-section" class="ss_section hidden">
+                            <h3>Account Settings</h3>
+                            <form>
+                                <!-- Name Section -->
+                                <div class="s-full">
+                                    <h4 class="namee">Name</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <p>First name</p>
+                                            <input type="text" value="Angel" class="f-input-field">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Last name</p>
+                                            <div class="s-name">
+                                                <input type="text" value="Canete" class="l-input-field">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email Address Section -->
+                                <div class="form-group">
+                                    <div class="s-em">
+                                        <label>Email Address</label>
+                                        <div class="email">
+                                            <p class="email-display">Your email is <strong>angelbaby@gmail.com</strong></p>
+                                            <!-- <a href="#" class="change-link">Change</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <!-- Password Section -->
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div id="password-view" class="p-pass">
+                                        <input type="password" value="********" class="p-input-field" disabled>
+                                        <a href="#" id="change-link" class="change-link">Change</a>
+                                    </div>
+                                    <div id="password-edit" class="p-hidden">
+                                        <div class="pass">
+                                            <div class="p-current">
+                                                <p>Current Password</p>
+                                                <input type="password" id="new-password" class="p--input-field" placeholder="Enter new password">
+                                            </div>
+                                            <div class="p-new">
+                                                <p>New Password</p>
+                                                <input type="password" id="current-password" class="p--input-field" placeholder="Enter current password">
+                                            </div>
+                                            <a href="#" id="hide-link" class="change-link">Hide</a>
+                                        </div>
+                                        <div class="reset">
+                                            <p>Can't remember your current password? <a href="#">Reset your password</a></p>
+                                            <button type="button" id="save-password-btn">Save password</button>
+                                        </div>
+                                    </div>    
+                                </div>
+                        
+                                <!-- Delete Account Section -->
+                                <div class="delete-account">
+                                    <label>Delete Account</label>
+                                    <div class="del">
+                                        <p class="d-text">Would you like to delete your account? Deleting your account will remove all the content associated with it.</p>
+                                        <a href="#" class="delete-link">I want to delete my account</a>
+                                    </div>
+                                </div>
+                                <div class="s-popup-overlay" id="s-popup">
+                                    <div class="s-popup-content">
+                                        <div class="s-popup-header">
+                                            <i class='bx bx-trash'></i>
+                                            <h2>Delete Account?</h2>
+                                        </div>
+                                        <p>Deleting your account is irreversible and will erase all your data. This action cannot be undone.</p>
+                                        <div class="popup-actions">
+                                            <button id="s-continueButton" class="s-continue-button">Continue</button>
+                                            <button id="s-cancelButton" class="s-cancel-button">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    
+                        <!-- Notifications Section -->
+                        <div id="notifications-section" class="ss_section hidden">
+                            <h3>Notifications</h3>
+                            <div class="s_notifications">
+                                <!-- Enable Desktop Notification -->
+                                <div class="notification-group">
+                                    <div class="notification-text">
+                                        <strong>Enable Desktop Notification</strong>
+                                        <p>Receive notification for all messages, updates, and documents</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                        
+                                <!-- Enable Unread Notification -->
+                                <div class="notification-group-n">
+                                    <div class="notification-text">
+                                        <strong>Enable Unread Notification</strong>
+                                        <p>Shows a red badge when you have an unread message</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                        
+                                <!-- Email Notifications -->
+                                <h3 class="n_email">Email Notifications</h3>
+                        
+                                <!-- Communication Emails -->
+                                <div class="notification-group">
+                                    <div class="notification-text">
+                                        <strong>Communication Emails</strong>
+                                        <p>Receive emails for messages, contracts, and documents</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                        
+                                <!-- Announcements & Updates -->
+                                <div class="notification-group">
+                                    <div class="notification-text">
+                                        <strong>Announcements & Updates</strong>
+                                        <p>Receive emails about product updates, improvements, etc.</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
              </section>
 
         </section>

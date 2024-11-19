@@ -477,3 +477,207 @@ cancelButton.addEventListener('click', function () {
     // Hide the popup
     popupContainer.style.display = 'none';
 });
+
+
+// SETTINGS
+document.addEventListener('DOMContentLoaded', function() {
+  // Sidebar links
+  const dashboardLink = document.getElementById('dashboard-link');
+  const projectsLink = document.getElementById('projects-link');
+  const calendarLink = document.getElementById('calendar-link');
+  const chatsLink = document.getElementById('chats-link');
+  const settingsLink = document.getElementById('settings-link');
+
+  // Section containers
+  const rightSection = document.querySelector('.right');
+  const projSection = document.querySelector('.proj');
+  const calendarSection = document.querySelector('.calendars');
+  const messageSection = document.querySelector('.message');
+  const settingsSection = document.querySelector('.settings');
+  const topSection = document.querySelector('.top');
+  const projDetails = document.querySelector('.proj-details');
+
+  // Hide all sections initially except for the dashboard (.right)
+  projSection.style.display = 'none';
+  calendarSection.style.display = 'none';
+  messageSection.style.display = 'none';
+  settingsSection.style.display = 'none';
+
+  // Dashboard section
+  dashboardLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    rightSection.style.display = 'block';
+    projSection.style.display = 'none';
+    calendarSection.style.display = 'none';
+    messageSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    projDetails.style.display = 'none';
+  });
+
+  // Projects section
+  projectsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    rightSection.style.display = 'none';
+    projSection.style.display = 'block';
+    projSection.style.visibility = 'visible'; 
+    projSection.style.position = 'relative';  
+    projDetails.style.display = 'none'; 
+    calendarSection.style.display = 'none';
+    messageSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+  });
+
+  // Calendar section
+  calendarLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    rightSection.style.display = 'none';
+    projSection.style.display = 'none';
+    calendarSection.style.display = 'block';
+    messageSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    projDetails.style.display = 'none';
+  });
+
+  // Message section
+  chatsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    rightSection.style.display = 'none';
+    projSection.style.display = 'none';
+    calendarSection.style.display = 'none';
+    messageSection.style.display = 'block';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    projDetails.style.display = 'none';
+  });
+
+  // Settings section
+  settingsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    rightSection.style.display = 'none';
+    projSection.style.display = 'none';
+    calendarSection.style.display = 'none';
+    messageSection.style.display = 'none';
+    settingsSection.style.display = 'block';
+    topSection.style.display = 'none'; 
+    projDetails.style.display = 'none';
+  });
+});
+
+
+
+
+// SETTINGS
+document.getElementById("profile-link").addEventListener("click", function() {
+showSection('s-profile-section');
+});
+
+document.getElementById("account-link").addEventListener("click", function() {
+showSection('account-section');
+});
+
+document.getElementById("notifications-link").addEventListener("click", function() {
+showSection('notifications-section');
+});
+
+function showSection(sectionId) {
+let sections = document.querySelectorAll('.ss_section');
+sections.forEach(section => {
+    section.classList.add('hidden');
+});
+
+document.getElementById(sectionId).classList.remove('hidden');
+document.getElementById(sectionId).classList.add('active');
+}
+
+
+
+// CHANGE & HIDE PASSWORD
+document.getElementById('change-link').addEventListener('click', function(e) {
+e.preventDefault();
+document.getElementById('password-view').style.display = 'none';  // Hides the "Change" view
+document.getElementById('password-edit').style.display = 'block'; // Shows the "Edit" view
+});
+
+document.getElementById('hide-link').addEventListener('click', function(e) {
+e.preventDefault();
+document.getElementById('password-view').style.display = 'flex'; // Shows the "Change" view
+document.getElementById('password-edit').style.display = 'none'; // Hides the "Edit" view
+});
+
+document.getElementById('save-password-btn').addEventListener('click', function() {
+var newPassword = document.getElementById('new-password').value;
+var currentPassword = document.getElementById('current-password').value;
+
+// Check if both fields are filled
+if (!newPassword || !currentPassword) {
+    alert('Please fill in both fields.');
+    return;
+}
+
+// Validate the new password length (at least 8 characters)
+if (newPassword.length < 8) {
+    alert('New password must be at least 8 characters long.');
+    return;
+}
+
+// Validate if the password contains at least one uppercase letter
+if (!/[A-Z]/.test(newPassword)) {
+    alert('New password must contain at least one uppercase letter.');
+    return;
+}
+
+// Validate if the password contains at least one lowercase letter
+if (!/[a-z]/.test(newPassword)) {
+    alert('New password must contain at least one lowercase letter.');
+    return;
+}
+
+// Validate if the password contains at least one number
+if (!/[0-9]/.test(newPassword)) {
+    alert('New password must contain at least one number.');
+    return;
+}
+
+// Validate if the password contains at least one special character
+if (!/[!@#$%^&*(),.?":{}|<>]/.test(newPassword)) {
+    alert('New password must contain at least one special character.');
+    return;
+}
+
+// Logic to handle password change 
+alert('Password successfully changed!');
+
+// After success, return to the original view
+document.getElementById('password-view').style.display = 'flex';  // Shows the "Change" view
+document.getElementById('password-edit').style.display = 'none';  // Hides the "Edit" view
+});
+
+
+
+//DELETE ACC POP-UP
+document.addEventListener("DOMContentLoaded", function () {
+const deleteLink = document.querySelector(".delete-link");
+const popup = document.getElementById("s-popup");
+const continueButton = document.getElementById("s-continueButton");
+const cancelButton = document.getElementById("s-cancelButton");
+
+// Show the popup when the delete link is clicked
+deleteLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    popup.style.display = "flex";
+});
+
+// Handle the Continue button click (delete action)
+continueButton.addEventListener("click", function () {
+    popup.style.display = "none";
+    alert("Account deleted successfully."); // Replace with actual delete function if needed
+});
+
+// Handle the Cancel button click (close popup)
+cancelButton.addEventListener("click", function () {
+    popup.style.display = "none";
+});
+});
