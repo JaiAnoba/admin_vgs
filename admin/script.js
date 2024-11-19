@@ -295,13 +295,52 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const totalUsersElement = document.querySelector('.total-users');
-    const rNumberElement = document.querySelector('.a_number');
+    const aNumberElement = document.querySelector('.a_number');
 
     if (totalUsersElement) {
         totalUsersElement.textContent = rowCount;
     }
 
-    if (rNumberElement) {
-        rNumberElement.textContent = rowCount;
+    if (aNumberElement) {
+        aNumberElement.textContent = rowCount;
+    }else if (aNumberElement == 0) {
+        aNumberElement.textContent = 0;
     }
 });
+
+
+//A-BADGE (NO. OF NEW USERS WITHIN A DAY)
+
+// Function to check if the date is today's date
+function isToday(dateString) {
+    const today = new Date();
+    const date = new Date(dateString);
+    return today.getDate() === date.getDate() && today.getMonth() === date.getMonth() && today.getFullYear() === date.getFullYear();
+}
+
+// Function to count new rows for current day
+function updateNewUsersCount() {
+    const rows = document.querySelectorAll('.user-table tbody tr');
+    let newUsersCount = 0;
+
+    for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const dateAdded = row.getAttribute('data-date');
+        
+        if (isToday(dateAdded)) {
+            newUsersCount++;
+        }
+    }
+
+    const badge = document.querySelector('.a-badge');
+    badge.textContent = newUsersCount;
+
+    if (newUsersCount === 0) {
+        badge.textContent = 0;
+    }
+}
+
+updateNewUsersCount();
+
+
+
