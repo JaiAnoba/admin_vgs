@@ -1,3 +1,99 @@
+// SIDEBAR NAVIGATION
+document.addEventListener('DOMContentLoaded', function() {
+  // Sidebar links
+  const dashboardLink = document.querySelector('a[href="dashboard"]');
+  const usersLink = document.querySelector('a[href="users"]');
+  const postsLink = document.querySelector('a[href="posts"]');
+  const settingsLink = document.querySelector('a[href="settings"]');
+
+  // Section containers
+  const dashboardSection = document.querySelector('.content-wrapper1');
+  const userSection = document.querySelector('.content-wrapper2');
+  const postsSection = document.querySelector('.content-wrapper3');
+  const settingsSection = document.querySelector('.content-wrapper4');
+  const topSection = document.querySelector('.header-wrapper');
+
+  // Header title
+  const headerTitle = document.querySelector('.header-title');
+
+  // Hide all sections initially except for the dashboard
+  userSection.style.display = 'none';
+  postsSection.style.display = 'none';
+  settingsSection.style.display = 'none';
+  topSection.style.display = 'flex';
+
+  // Function to update the header title based on the section
+  function updateHeaderTitle(section) {
+    if (section === userSection) {
+      headerTitle.innerHTML = `
+        <h1> Accounts</h1>
+        <span class="des">Manage user accounts</span>
+      `;
+    }else if (section === postsSection) {
+      headerTitle.innerHTML = `
+        <h1> Posts Requests</h1>
+        <span class="des">Review users' posts</span>
+      `;
+    } else if (section === settingsSection) {
+      headerTitle.innerHTML = `
+        <h1> Settings</h1>
+        <span class="des">Adjust your preferences</span>
+      `;
+    }else if (section === dashboardSection) {
+      headerTitle.innerHTML = `
+        <h1> Dashboard</h1>
+        <span class="date" id="current-date"></span>
+      `;
+      document.getElementById("current-date").innerText = formatDate();
+    }
+  }
+
+  // Dashboard section
+  dashboardLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    dashboardSection.style.display = 'block';
+    userSection.style.display = 'none';
+    postsSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    updateHeaderTitle(dashboardSection);
+  });
+
+  // Users Management section
+  usersLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    dashboardSection.style.display = 'none';
+    userSection.style.display = 'block';
+    postsSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    updateHeaderTitle(userSection);
+  });
+
+  // Posts Requests section
+  postsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    dashboardSection.style.display = 'none';
+    userSection.style.display = 'none';
+    postsSection.style.display = 'block';
+    settingsSection.style.display = 'none';
+    topSection.style.display = 'flex';
+    updateHeaderTitle(postsSection);
+  });
+
+  // Settings section
+  settingsLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    dashboardSection.style.display = 'none';
+    userSection.style.display = 'none';
+    postsSection.style.display = 'none';
+    settingsSection.style.display = 'block';
+    topSection.style.display = 'flex';
+    updateHeaderTitle(settingsSection);
+  });
+});
+
+
 // Function to format and display the current date in dashboard
 function formatDate() {
     let today = new Date();
@@ -271,76 +367,97 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   
 
-//TOTAL NO. OF ALL USERS
+//TOTAL NO. AND CURRENT NO. IN THE DASHBOARD (ACCOUNTS & POSTS REQUESTS)
 document.addEventListener("DOMContentLoaded", function() {
-    const tableRows = document.querySelectorAll('.user-table tbody tr');
-    
-    let rowCount = 0;
+  const tableRows = document.querySelectorAll('.user-table tbody tr');
+  
+  let rowCount = 0;
 
-    for (let i = 0; i < tableRows.length; i++) {
-        const cells = tableRows[i].querySelectorAll('td');
-        
-        let hasContent = false;
-        
-        for (let j = 0; j < cells.length; j++) {
-            if (cells[j].textContent.trim() !== "" || cells[j].querySelector('img') !== null) {
-                hasContent = true;
-                break;  
-            }
-        }
-        
-        if (hasContent) {
-            rowCount++;
-        }
-    }
+  for (let i = 0; i < tableRows.length; i++) {
+      const cells = tableRows[i].querySelectorAll('td');
+      
+      let hasContent = false;
+      
+      for (let j = 0; j < cells.length; j++) {
+          if (cells[j].textContent.trim() !== "" || cells[j].querySelector('img') !== null) {
+              hasContent = true;
+              break;  
+          }
+      }
+      
+      if (hasContent) {
+          rowCount++;
+      }
+  }
 
-    const totalUsersElement = document.querySelector('.total-users');
-    const aNumberElement = document.querySelector('.a_number');
+  const totalUsersElement = document.querySelector('.total-users');
+  const aNumberElement = document.querySelector('.a_number');
+  const aBadgeElement = document.querySelector('.a-badge');
 
-    if (totalUsersElement) {
-        totalUsersElement.textContent = rowCount;
-    }
+  if (totalUsersElement) {
+      totalUsersElement.textContent = rowCount || 0;
+  }
 
-    if (aNumberElement) {
-        aNumberElement.textContent = rowCount;
-    }else if (aNumberElement == 0) {
-        aNumberElement.textContent = 0;
-    }
+  if (aNumberElement) {
+      aNumberElement.textContent = rowCount || 0;
+  }
+
+  if (aBadgeElement) {
+      aBadgeElement.textContent = 0;
+  }
+
+  const rNumberElement = document.querySelector('.r_number');
+  const pBadgeElement = document.querySelector('.p-badge');
+
+  const today = new Date().toDateString();
+
+  const lastUpdatedDate = localStorage.getItem('lastUpdatedDate');
+  if (lastUpdatedDate !== today) {
+      localStorage.setItem('dailyCardCount', 0);
+      localStorage.setItem('lastUpdatedDate', today);
+  }
+
+  // Update the counts
+  function updateCardCounts() {
+      const cards = document.querySelectorAll('.posts-wrapper .card');
+      
+      rNumberElement.textContent = cards.length || 0;
+
+      let dailyCardCount = parseInt(localStorage.getItem('dailyCardCount')) || 0;
+
+      const trackedCardCount = parseInt(localStorage.getItem('trackedCardCount')) || 0;
+
+      if (cards.length > trackedCardCount) {
+          dailyCardCount += cards.length - trackedCardCount;
+          localStorage.setItem('dailyCardCount', dailyCardCount);
+          localStorage.setItem('trackedCardCount', cards.length);
+      }
+
+      // Update the badge
+      pBadgeElement.textContent = dailyCardCount || 0;
+  }
+
+  updateCardCounts();
+
+  // New card additions 
+  const postsWrapper = document.querySelector('.posts-wrapper');
+  const observer = new MutationObserver(updateCardCounts);
+
+  if (postsWrapper) {
+      observer.observe(postsWrapper, { childList: true });
+  }
+
+  // Display 0 if no rows or cards exist
+  if (tableRows.length === 0) {
+      aBadgeElement.textContent = 0;
+  }
+
+  const cards = document.querySelectorAll('.posts-wrapper .card');
+  if (cards.length === 0) {
+      pBadgeElement.textContent = 0;
+      rNumberElement.textContent = 0;
+  }
 });
-
-
-//A-BADGE (NO. OF NEW USERS WITHIN A DAY)
-
-// Function to check if the date is today's date
-function isToday(dateString) {
-    const today = new Date();
-    const date = new Date(dateString);
-    return today.getDate() === date.getDate() && today.getMonth() === date.getMonth() && today.getFullYear() === date.getFullYear();
-}
-
-// Function to count new rows for current day
-function updateNewUsersCount() {
-    const rows = document.querySelectorAll('.user-table tbody tr');
-    let newUsersCount = 0;
-
-    for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        const dateAdded = row.getAttribute('data-date');
-        
-        if (isToday(dateAdded)) {
-            newUsersCount++;
-        }
-    }
-
-    const badge = document.querySelector('.a-badge');
-    badge.textContent = newUsersCount;
-
-    if (newUsersCount === 0) {
-        badge.textContent = 0;
-    }
-}
-
-updateNewUsersCount();
 
 
 //CARD MODAL
@@ -477,96 +594,6 @@ cancelButton.addEventListener('click', function () {
     // Hide the popup
     popupContainer.style.display = 'none';
 });
-
-
-// SETTINGS
-document.addEventListener('DOMContentLoaded', function() {
-  // Sidebar links
-  const dashboardLink = document.getElementById('dashboard-link');
-  const projectsLink = document.getElementById('projects-link');
-  const calendarLink = document.getElementById('calendar-link');
-  const chatsLink = document.getElementById('chats-link');
-  const settingsLink = document.getElementById('settings-link');
-
-  // Section containers
-  const rightSection = document.querySelector('.right');
-  const projSection = document.querySelector('.proj');
-  const calendarSection = document.querySelector('.calendars');
-  const messageSection = document.querySelector('.message');
-  const settingsSection = document.querySelector('.settings');
-  const topSection = document.querySelector('.top');
-  const projDetails = document.querySelector('.proj-details');
-
-  // Hide all sections initially except for the dashboard (.right)
-  projSection.style.display = 'none';
-  calendarSection.style.display = 'none';
-  messageSection.style.display = 'none';
-  settingsSection.style.display = 'none';
-
-  // Dashboard section
-  dashboardLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    rightSection.style.display = 'block';
-    projSection.style.display = 'none';
-    calendarSection.style.display = 'none';
-    messageSection.style.display = 'none';
-    settingsSection.style.display = 'none';
-    topSection.style.display = 'flex';
-    projDetails.style.display = 'none';
-  });
-
-  // Projects section
-  projectsLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    rightSection.style.display = 'none';
-    projSection.style.display = 'block';
-    projSection.style.visibility = 'visible'; 
-    projSection.style.position = 'relative';  
-    projDetails.style.display = 'none'; 
-    calendarSection.style.display = 'none';
-    messageSection.style.display = 'none';
-    settingsSection.style.display = 'none';
-    topSection.style.display = 'flex';
-  });
-
-  // Calendar section
-  calendarLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    rightSection.style.display = 'none';
-    projSection.style.display = 'none';
-    calendarSection.style.display = 'block';
-    messageSection.style.display = 'none';
-    settingsSection.style.display = 'none';
-    topSection.style.display = 'flex';
-    projDetails.style.display = 'none';
-  });
-
-  // Message section
-  chatsLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    rightSection.style.display = 'none';
-    projSection.style.display = 'none';
-    calendarSection.style.display = 'none';
-    messageSection.style.display = 'block';
-    settingsSection.style.display = 'none';
-    topSection.style.display = 'flex';
-    projDetails.style.display = 'none';
-  });
-
-  // Settings section
-  settingsLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    rightSection.style.display = 'none';
-    projSection.style.display = 'none';
-    calendarSection.style.display = 'none';
-    messageSection.style.display = 'none';
-    settingsSection.style.display = 'block';
-    topSection.style.display = 'none'; 
-    projDetails.style.display = 'none';
-  });
-});
-
-
 
 
 // SETTINGS
