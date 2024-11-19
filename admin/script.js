@@ -343,4 +343,137 @@ function updateNewUsersCount() {
 updateNewUsersCount();
 
 
+//CARD MODAL
+document.addEventListener("DOMContentLoaded", function () {
+    const bannerImages = document.querySelectorAll(".banner-image");
+    const modal = document.getElementById("image-modal");
+    const modalImage = modal.querySelector(".modal-image");
+    const leftBtn = modal.querySelector(".left-btn");
+    const rightBtn = modal.querySelector(".right-btn");
+    let imageList = [];
+    let currentIndex = 0;
+  
+    for (let i = 0; i < bannerImages.length; i++) {
+      bannerImages[i].addEventListener("click", function () {
+        // Collect all images in the same card
+        const parentCard = bannerImages[i].closest(".card");
+        const imagesInCard = parentCard.querySelectorAll(".banner-image");
+  
+        imageList = [];
+        for (let j = 0; j < imagesInCard.length; j++) {
+          imageList.push(imagesInCard[j].src);
+        }
+  
+        currentIndex = imageList.indexOf(bannerImages[i].src);
+  
+        showImage();
+        updateNavButtons();
+        modal.style.display = "flex";
+      });
+    }
+  
+    leftBtn.addEventListener("click", function () {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showImage();
+        updateNavButtons();
+      }
+    });
+  
+    rightBtn.addEventListener("click", function () {
+      if (currentIndex < imageList.length - 1) {
+        currentIndex++;
+        showImage();
+        updateNavButtons();
+      }
+    });
+  
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  
+    function showImage() {
+      modalImage.src = imageList[currentIndex];
+    }
+  
+    function updateNavButtons() {
+      if (imageList.length <= 1) {
+        // Hide both buttons if there's only one image
+        leftBtn.style.display = "none";
+        rightBtn.style.display = "none";
+      } else {
+        // Show/hide left button
+        if (currentIndex > 0) {
+          leftBtn.style.display = "block";
+        } else {
+          leftBtn.style.display = "none";
+        }
+  
+        // Show/hide right button
+        if (currentIndex < imageList.length - 1) {
+          rightBtn.style.display = "block";
+        } else {
+          rightBtn.style.display = "none";
+        }
+      }
+    }
+});
+  
 
+//POPUP MSG FOR APPOVE & DECLINE
+const popupContainer = document.getElementById('p-popup-container');
+const popupMessage = document.getElementById('p-popup-message');
+const confirmButton = document.getElementById('p-confirm-btn');
+const cancelButton = document.getElementById('p-cancel-btn');
+
+const approveButtons = document.querySelectorAll('.approve-btn');
+const declineButtons = document.querySelectorAll('.decline-btn');
+
+// Variables to track the selected card and action
+let selectedCard = null;
+let selectedAction = null;
+
+for (let i = 0; i < approveButtons.length; i++) {
+    approveButtons[i].addEventListener('click', function () {
+      selectedCard = this.closest('.card');
+      selectedAction = 'approve';
+      popupMessage.textContent = 'Are you sure you want to approve this post?';
+      popupContainer.style.display = 'flex';
+    });
+}
+
+for (let i = 0; i < declineButtons.length; i++) {
+    declineButtons[i].addEventListener('click', function () {
+      selectedCard = this.closest('.card');
+      selectedAction = 'decline';
+      popupMessage.textContent =
+        'Declining this post will ban the user for 14 days. Are you sure?';
+      popupContainer.style.display = 'flex'; // Show the popup
+    });
+}
+
+// Confirm button click
+confirmButton.addEventListener('click', function () {
+    if (selectedAction === 'approve' || selectedAction === 'decline') {
+        // Remove the selected card
+        selectedCard.remove();
+
+        // Alert message
+        if (selectedAction === 'approve') {
+          alert('Post has been approved.');
+        } else if (selectedAction === 'decline') {
+          alert('Post has been declined. User banned for 14 days.');
+        }
+    }
+
+    // Hide the popup
+    popupContainer.style.display = 'none';
+});
+
+// Cancel button click
+cancelButton.addEventListener('click', function () {
+    // Hide the popup
+    popupContainer.style.display = 'none';
+});
