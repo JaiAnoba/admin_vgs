@@ -611,50 +611,41 @@ document.getElementById('save-password-btn').addEventListener('click', function(
 var newPassword = document.getElementById('new-password').value;
 var currentPassword = document.getElementById('current-password').value;
 
-// Check if both fields are filled
 if (!newPassword || !currentPassword) {
     alert('Please fill in both fields.');
     return;
 }
 
-// Validate the new password length (at least 8 characters)
 if (newPassword.length < 8) {
     alert('New password must be at least 8 characters long.');
     return;
 }
 
-// Validate if the password contains at least one uppercase letter
 if (!/[A-Z]/.test(newPassword)) {
     alert('New password must contain at least one uppercase letter.');
     return;
 }
 
-// Validate if the password contains at least one lowercase letter
 if (!/[a-z]/.test(newPassword)) {
     alert('New password must contain at least one lowercase letter.');
     return;
 }
 
-// Validate if the password contains at least one number
 if (!/[0-9]/.test(newPassword)) {
     alert('New password must contain at least one number.');
     return;
 }
 
-// Validate if the password contains at least one special character
 if (!/[!@#$%^&*(),.?":{}|<>]/.test(newPassword)) {
     alert('New password must contain at least one special character.');
     return;
 }
 
-// Logic to handle password change 
 alert('Password successfully changed!');
 
-// After success, return to the original view
 document.getElementById('password-view').style.display = 'flex';  // Shows the "Change" view
 document.getElementById('password-edit').style.display = 'none';  // Hides the "Edit" view
 });
-
 
 
 //DELETE ACC POP-UP
@@ -680,4 +671,123 @@ continueButton.addEventListener("click", function () {
 cancelButton.addEventListener("click", function () {
     popup.style.display = "none";
 });
+});
+
+
+//USER DROPDOWN
+document.addEventListener("DOMContentLoaded", function () {
+  const userImg = document.querySelector(".profile-pic1");
+  const dropdown = document.querySelector(".dropdown");
+
+  userImg.addEventListener("click", function () {
+      dropdown.classList.toggle("active");
+  });
+
+  // Close dropdown if clicking outside of it
+  document.addEventListener("click", function (event) {
+      if (!userImg.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.classList.remove("active");
+      }
+  });
+});
+
+
+//UPLOAD PROFILE PIC
+const uploadButton = document.querySelector('.upload-btn');
+const removeButton = document.querySelector('.remove-btn');
+const profilePics = document.querySelectorAll('.profile-pic1, .profile-pic2');
+
+const fileInput = document.createElement('input');
+fileInput.type = 'file';
+fileInput.accept = 'image/*';
+
+uploadButton.addEventListener('click', function () {
+  fileInput.click();
+});
+
+fileInput.addEventListener('change', function () {
+  if (fileInput.files && fileInput.files[0]) {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      for (let i = 0; i < profilePics.length; i++) {
+        profilePics[i].style.backgroundImage = `url('${e.target.result}')`;
+        profilePics[i].style.backgroundSize = 'cover';
+        profilePics[i].style.backgroundPosition = 'center';
+      }
+      checkImageDisplay(); 
+    };
+
+    reader.readAsDataURL(file);
+  }
+});
+
+// Function to check if any profile picture has an image
+function checkImageDisplay() {
+  let hasImage = false;
+  for (let i = 0; i < profilePics.length; i++) {
+    if (profilePics[i].style.backgroundImage) {
+      hasImage = true;
+      break;
+    }
+  }
+  if (hasImage) {
+    removeButton.style.display = 'block'; 
+  } else {
+    removeButton.style.display = 'none'; 
+  }
+}
+
+removeButton.addEventListener('click', function () {
+  for (let i = 0; i < profilePics.length; i++) {
+    profilePics[i].style.backgroundImage = '';
+  }
+  checkImageDisplay(); 
+});
+
+
+//SETTINGS-PROFILE FORM
+const pencilIcon = document.querySelector('.bxs-pencil');
+const formButtons = document.querySelector('.form-buttons');
+const inputField = document.querySelector('.input-field');
+const textareaField = document.querySelector('.textarea-field');
+const saveButton = document.querySelector('.save-btn');
+const clearButton = document.querySelector('.clear-btn');
+
+formButtons.style.display = 'none';
+inputField.disabled = true;
+textareaField.disabled = true;
+
+const formElements = [inputField, textareaField, formButtons];
+
+pencilIcon.addEventListener('click', function() {
+    for (let i = 0; i < formElements.length; i++) {
+        if (formElements[i] === formButtons) {
+            if (formButtons.style.display === 'none') {
+                formButtons.style.display = 'block'; 
+                inputField.disabled = false;
+                textareaField.disabled = false; 
+            } else {
+                formButtons.style.display = 'none'; 
+                inputField.disabled = true; 
+                textareaField.disabled = true; 
+            }
+        }
+    }
+});
+
+
+saveButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+    console.log('Saved Username:', inputField.value);
+    console.log('Saved Bio:', textareaField.value);
+});
+
+clearButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+    inputField.value = '';
+    textareaField.value = '';
 });

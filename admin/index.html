@@ -33,7 +33,33 @@
                     <span class="date" id="current-date"></span>
                     <div class="notifications">
                         <span class="bell-icon" id="notification-bell"><i class='bx bxs-bell' undefined ></i></span>
-                        <img src="pics/1672369246156.jpg" class="user">
+                        <div class="profile-pic1"></div>
+                        <div class="dropdown">
+                            <div class="nam">
+                                <h4>Angel</h4>
+                                <p>angelbaby123@gmail.com</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <i class='bx bx-user'></i>
+                                    My Profile
+                                </li>
+                                <li>
+                                    <i class='bx bx-cog' ></i>
+                                    Account Settings
+                                </li>
+                                <li>
+                                    <i class='bx bx-devices' ></i>
+                                    Device Management
+                                </li>
+                                <li>
+                                    <a href="signin.html">
+                                        <i class='bx bx-log-out' ></i>
+                                        Sign Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </header>
             </section>   
@@ -336,7 +362,8 @@
                             <div class="s_profile">
                                 <!-- Profile Image Section -->
                                 <div class="s_profile-image">
-                                    <img src="pics/mona.jpg" alt="Profile" class="profile-pic">
+                                    <div class="profile-pic2"></div>
+                                    <input type="file" id="file-input" accept="image/*" style="display: none;">
                                     <div class="s_text">
                                         <h4>Upload new image</h4>
                                         <p class="file-size">Max file size - 10mb</p>
@@ -349,7 +376,8 @@
                         
                                 <!-- Profile Form Section -->
                                 <form>
-                                    <label>Username</label>
+                                    <label>Username<i class='bx bxs-pencil'></i></label>
+
                                     <input type="text" value="Angel" class="input-field">
                                     
                                     <label>Role</label>
