@@ -83,7 +83,7 @@ for (let i = 0; i < declineButtons.length; i++) {
       selectedAction = 'decline';
       popupMessage.textContent =
         'Declining this post will ban the user for 14 days. Are you sure?';
-      popupContainer.style.display = 'flex'; // Show the popup
+      popupContainer.style.display = 'flex'; 
     });
 }
 

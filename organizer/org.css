@@ -252,10 +252,13 @@
     cursor: pointer;
 }
 
-.e-container {
-    width: 1200px;
+.e-content {
+    width: 1450px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 /* Header Section */
@@ -285,29 +288,33 @@
   margin: 0 auto;
 }
 
-/* Content Section */
-.e-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
 /* Admin Section */
 .admin {
-  flex: 1;
+  width: 450px;
+  padding: 20px;
   text-align: center;
+  border: solid;
 }
 
 .admin h2 {
-  font-size: 20px;
+  font-size: 1.3rem;
   margin-bottom: 20px;
 }
 
+.admin p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
 .admin-card {
+  width: 250px;
+  height: 300px;
+  margin-inline: auto;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: solid;
 }
 
 
@@ -318,7 +325,10 @@
 
 /* Collaborators Section */
 .collaborators {
-  flex: 2;
+  width: 950px;
+  padding: 15px;
+  text-align: center;
+  border: solid;
 }
 
 .collaborators h2 {
@@ -355,7 +365,7 @@
 /* Actions Section */
 .actions {
     display: flex;
-    margin-top: 25px;
+    margin-top: 150px;
     justify-content: center;
     gap: 50px;
 }
@@ -365,8 +375,6 @@
   padding: 8px 15px;
   border: none;
   border-radius: 20px;
-  position: relative;
-  top: 200px;
   font-size: 0.9rem;
   cursor: pointer;
 }
@@ -423,19 +431,6 @@
 }
 
 .p-confirm-btn {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.p-confirm-btn:hover {
-  background-color: #316e35;
-}
-
-.p-cancel-btn {
   background-color: #f44336;
   color: #fff;
   padding: 10px 20px;
@@ -444,8 +439,21 @@
   cursor: pointer;
 }
 
-.p-cancel-btn:hover {
+.p-confirm-btn:hover {
   background-color: #c23230;
+}
+
+.p-cancel-btn {
+  padding: 10px 20px;
+  border: 1px solid #777777;
+  color: #777777;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.p-cancel-btn:hover {
+  border: 1px solid black;
+  color: black;
 }
   
 
