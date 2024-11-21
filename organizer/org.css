@@ -11,6 +11,7 @@
     max-width: 1900px;
     height: 1000px;
     display: flex;
+    border: solid;
 }
 
 .sidebar {
@@ -124,6 +125,7 @@
     color: #666;
     font-size: 0.9rem; 
     text-align: center; 
+    margin-left: 95px;
     width: 185px;
 }
 
@@ -181,19 +183,26 @@
 .card {
   width: 350px;
   height: 320px;
-  padding: 10px;
+  padding: 20px;
   background-color: #f1ecec;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .art-title {
     text-align: center;
-    margin-bottom: 10px;
+    margin-block: 20px;
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
 }
 
 /* Scrollbar Styling */
@@ -213,11 +222,11 @@
 
 /* Banner Image */
 .banner-image {
-  width: 100%;
-  height: 150px;
+  width: 60%;
+  height: 110px;
+  margin-left: 55px;
   border-radius: 10px;
   object-fit: cover;
-  cursor: pointer;
 }
 
 /* Card Content */
@@ -225,113 +234,156 @@
   padding: 15px;
 }
 
-/* Profile Section */
-.profile {
+
+/* PANEL INSIDE THE EXHBIT CARD */
+.panel {
+    width: 1500px;
+    height: 850px;
+    padding: 20px;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: #f4f1f1;
+}
+
+.bx-chevron-left {
+    font-size: 2.5rem;
+    position: relative;
+    right: 80px;
+    cursor: pointer;
+}
+
+.e-container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.e-header {
+  margin-bottom: 40px;
+}
+
+.e-date {
+  margin-left: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.e-header h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  color: #222;
+  margin: 10px 0;
+}
+
+.e-description {
+  font-size: 1rem;
+  text-align: center;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Section */
+.e-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.profile-picture {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 10px;
+/* Admin Section */
+.admin {
+  flex: 1;
+  text-align: center;
 }
 
-.profile-info .name {
-  font-size: 0.8rem;
-  margin: 0;
-  font-weight: 500;
+.admin h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.admin-card .art-collage img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Collaborators Section */
+.collaborators {
+  flex: 2;
+}
+
+.collaborators h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.collaborator-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.collaborator {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.collaborator .art-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.collaborator .art-collage img {
+  width: 100%;
+  border-radius: 5px;
 }
 
 /* Actions Section */
 .actions {
-  display: flex;
-  margin-top: 25px;
-  justify-content: center;
-  gap: 30px;
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+    gap: 50px;
 }
 
 .btn {
+  width: 180px;
   padding: 8px 15px;
   border: none;
   border-radius: 20px;
-  font-size: 0.8rem;
+  position: relative;
+  top: 200px;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
 .approve-btn {
-  background-color: #4caf50;
-  color: #fff;
-}
-
-.approve-btn:hover {
-  background-color: #316e35;
-}
-
-.decline-btn {
   background-color: #f44336;
   color: #fff;
 }
 
-.decline-btn:hover {
+.approve-btn:hover {
   background-color: #c23230;
 }
 
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+.decline-btn {
+  border: 1px solid black;
 }
 
-.modal-content {
-  position: relative;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.modal-image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  z-index: 1010;
-}
-
-.left-btn {
-  left: 10px;
-}
-
-.right-btn {
-  right: 10px;
-}
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 1);
-}
 
 /* POPUP MSG */ 
 .p-popup {

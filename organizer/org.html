@@ -21,9 +21,9 @@
             <a href="#" class="logout"><i class='bx bxs-log-out'></i>Logout</a>
         </aside>
 
-            <!-- Main Content -->
+        <!-- Main Content -->
         <section class="main-wrapper">
-            <section class="header-wrapper" id="header">
+            <section class="header-wrapper" id="header" style="display: none;">
                 <header class="header">
                     <div class="header-title">
                         <h1>Review an exhibit today!</h1>
@@ -64,33 +64,99 @@
 
             <!-- EXHIBITS REQUESTS -->
             <section class="content-wrapper1" id="exhibits" >
-                <div class="posts-wrapper">
+                <div class="posts-wrapper" style="display: none;">
                     <div class="card">
-                        <img src="pics/a1.jpg" class="banner-image">
+                        <img src="pics/banner.png" class="banner-image">
                         <div class="card-content">
-                            <p class="art-title">Title</p>
-                            <div class="profile">
-                                <img src="pics/mona.jpg" alt="Profile Picture" class="profile-picture">
-                                <div class="profile-info">
-                                  <h3 class="name">Jai Anoba</h3>
-                                </div>
-                            </div>
-                            <div class="actions">
-                                <button class="btn approve-btn">Approve</button>
-                                <button class="btn decline-btn">Decline</button>
-                            </div>
+                            <p class="art-title">(Title)</p>
+                            <p class="description">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Modal -->
-                <div class="modal" id="image-modal">
-                    <button class="nav-btn left-btn">&lt;</button>
-                    <button class="nav-btn right-btn">&gt;</button>
-                    <div class="modal-content">
-                        <img src="" class="modal-image">
+
+                <!-- PANEL INSIDE THE EXHBIT CARD -->
+                    <div class="panel">
+                        <i class='bx bx-chevron-left'></i>
+                        <!-- Header -->
+                        <div class="e-header">
+                          <div class="e-date">12/01/2024</div>
+                          <h1>Modern Arts</h1>
+                          <p class="e-description">
+                            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                          </p>
+                        </div>
+                    
+                        <!-- Content Section -->
+                        <div class="e-content">
+                          <!-- Admin Section -->
+                          <div class="admin">
+                            <h2>Admin</h2>
+                            <p>Jimuel</p>
+                            <div class="admin-card">
+                              <div class="art-collage">
+                                <img src="art1.jpg" alt="Art 1">
+                                <img src="art2.jpg" alt="Art 2">
+                                <img src="art3.jpg" alt="Art 3">
+                                <img src="art4.jpg" alt="Art 4">
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Collaborators Section -->
+                          <div class="collaborators">
+                            <h2>Collaborators</h2>
+                            <div class="collaborator-cards">
+                                <p>Angel</p>
+                                <div class="collaborator">
+                                    <div class="art-collage">
+                                      <img src="art1.jpg" alt="Art 1">
+                                      <img src="art2.jpg" alt="Art 2">
+                                      <img src="art3.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                                <p>Jerlyn</p>
+                                <div class="collaborator">
+                                    <div class="art-collage">
+                                      <img src="art1.jpg" alt="Art 1">
+                                      <img src="art2.jpg" alt="Art 2">
+                                      <img src="art3.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                                <p>Genesis</p>
+                                <div class="collaborator">
+                                    <div class="art-collage">
+                                      <img src="art1.jpg" alt="Art 1">
+                                      <img src="art2.jpg" alt="Art 2">
+                                      <img src="art3.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                                <p>Janah</p>
+                                <div class="collaborator">
+                                    <div class="art-collage">
+                                      <img src="art1.jpg" alt="Art 1">
+                                      <img src="art2.jpg" alt="Art 2">
+                                      <img src="art3.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                                <p>Jamaica</p>
+                                <div class="collaborator">
+                                    <div class="art-collage">
+                                      <img src="art1.jpg" alt="Art 1">
+                                      <img src="art2.jpg" alt="Art 2">
+                                      <img src="art3.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="btn approve-btn">Approve</button>
+                            <button class="btn decline-btn">Decline</button>
+                        </div>
                     </div>
-                </div>
+                    
                 <!-- Popup Container -->
                 <div id="p-popup-container" class="p-popup">
                     <div class="p-popup-content">

@@ -49,7 +49,11 @@ function formatDate() {
 
 document.getElementById("current-date").innerText = formatDate();
 
-  
+ 
+//DESCRIPTION (...) 
+
+
+
 
 //POPUP MSG FOR APPOVE & DECLINE
 const popupContainer = document.getElementById('p-popup-container');
@@ -106,6 +110,9 @@ cancelButton.addEventListener('click', function () {
     // Hide the popup
     popupContainer.style.display = 'none';
 });
+
+
+
 
 
 // SETTINGS
