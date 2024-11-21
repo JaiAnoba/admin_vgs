@@ -112,6 +112,65 @@ cancelButton.addEventListener('click', function () {
 });
 
 
+//ADMIN & COLLAB IMG CAROUSEL
+document.addEventListener("DOMContentLoaded", function () {
+  const adminCards = document.querySelectorAll(".admin-card, .collaborator");
+  const modal = document.getElementById("modal");
+  const modalOverlay = document.querySelector(".modal-overlay");
+  const modalBanner = document.querySelector(".modal-banner");
+  const prevBtn = document.querySelector(".nav.prev");
+  const nextBtn = document.querySelector(".nav.next");
+
+  let images = []; // Store the images from the clicked card
+  let currentIndex = 0;
+
+  // Open modal when clicking on an admin card or collaborator
+  for (let i = 0; i < adminCards.length; i++) {
+    adminCards[i].addEventListener("click", function () {
+      const imgElements = adminCards[i].querySelectorAll("img");
+      images = [];
+
+      // Collect all image sources
+      for (let j = 0; j < imgElements.length; j++) {
+        images.push(imgElements[j].src);
+      }
+
+      // Set the first image in the modal
+      currentIndex = 0;
+      modalBanner.src = images[currentIndex];
+
+      // Show the modal
+      modal.style.display = "flex";
+    });
+  }
+
+  // Close modal when clicking the overlay
+  modalOverlay.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // Navigate to the previous image
+  prevBtn.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--; // Move to the previous image
+      modalBanner.src = images[currentIndex];
+    } else {
+      // Optional: Show a message or wrap around to the last image
+      console.log("No previous image.");
+    }
+  });
+
+  // Navigate to the next image
+  nextBtn.addEventListener("click", function () {
+    if (currentIndex < images.length - 1) {
+      currentIndex++; // Move to the next image
+      modalBanner.src = images[currentIndex];
+    } else {
+      // Optional: Show a message or wrap around to the first image
+      console.log("No next image.");
+    }
+  });
+});
 
 
 
