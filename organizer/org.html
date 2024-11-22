@@ -23,7 +23,7 @@
 
         <!-- Main Content -->
         <section class="main-wrapper">
-            <section class="header-wrapper" id="header" style="display: none;">
+            <section class="header-wrapper" id="header">
                 <header class="header">
                     <div class="header-title">
                         <h1>Review an exhibit today!</h1>
@@ -64,7 +64,7 @@
 
             <!-- EXHIBITS REQUESTS -->
             <section class="content-wrapper1" id="exhibits" >
-                <div class="posts-wrapper" style="display: none;">
+                <div class="posts-wrapper" >
                     <div class="card">
                         <img src="pics/banner.png" class="banner-image">
                         <div class="card-content">
@@ -76,136 +76,130 @@
 
 
                 <!-- PANEL INSIDE THE EXHBIT CARD -->
-                    <div class="panel">
-                        <i class='bx bx-chevron-left'></i>
-                        <!-- Header -->
-                        <div class="e-header">
-                            <div class="e-date">12/01/2024</div>
-                            <h1>Modern Arts</h1>
-                            <p class="e-description">
-                              "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                            </p>
-                        </div>
-                    
-                        <!-- Content Section -->
-                        <div class="e-content">
-                            <!-- Admin Section -->
-                            <div class="admin">
-                                <h2>Admin</h2>
-                                <p>Jimuel</p>
-                                <div class="admin-card">
-                                    <div class="art-collage">
-                                        <div class="artworks">
-                                            <img src="pics/a1.jpg" alt="Art 1">
-                                            <img src="pics/a3.jpg" alt="Art 2">
-                                        </div>
-                                        <div class="artwork">
-                                            <img src="pics/a2.jpg" alt="Art 3">
-                                        </div>
+                <section id="panel"  class="panel" style="display: none;">
+                    <i class='bx bx-chevron-left'></i>
+                    <!-- Header -->
+                    <div class="e-header">
+                        <div class="e-date">12/01/2024</div>
+                        <h1>Modern Arts</h1>
+                        <p class="e-description">
+                          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                        </p>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="e-content">
+                        <!-- Admin Section -->
+                        <div class="admin">
+                            <h2>Admin</h2>
+                            <p>Jimuel</p>
+                            <div class="admin-card">
+                                <div class="art-collage">
+                                    <div class="artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
                                     </div>
-                                </div>
-                            </div>
-                      
-                            <!-- Collaborators Section -->
-                            <div class="collaborators">
-                                <h2>Collaborators</h2>
-                                <div class="collaborator-cards">
-                                    <div class="collab-wrapper1">
-                                        <p class="collab-name1">Angel</p>
-                                        <div class="collaborator">
-                                            <div class="art-collage">
-                                                <div class="c-artworks">
-                                                    <img src="pics/a1.jpg" alt="Art 1">
-                                                    <img src="pics/a3.jpg" alt="Art 2">
-                                                </div>
-                                                <div class="c-artwork">
-                                                    <img src="pics/a2.jpg" alt="Art 3">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="collab-name1">Jeralyn</p>
-                                        <div class="collaborator">
-                                            <div class="art-collage">
-                                                <div class="c-artworks">
-                                                    <img src="pics/a1.jpg" alt="Art 1">
-                                                    <img src="pics/a3.jpg" alt="Art 2">
-                                                </div>
-                                                <div class="c-artwork">
-                                                    <img src="pics/a2.jpg" alt="Art 3">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="collab-name1">Genesis</p>
-                                        <div class="collaborator">
-                                            <div class="art-collage">
-                                                <div class="c-artworks">
-                                                    <img src="pics/a1.jpg" alt="Art 1">
-                                                    <img src="pics/a3.jpg" alt="Art 2">
-                                                </div>
-                                                <div class="c-artwork">
-                                                    <img src="pics/a2.jpg" alt="Art 3">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="collab-wrapper2">
-                                        <p class="collab-name2">Janah</p>
-                                        <div class="collaborator">
-                                            <div class="art-collage">
-                                                <div class="c-artworks">
-                                                    <img src="pics/a1.jpg" alt="Art 1">
-                                                    <img src="pics/a3.jpg" alt="Art 2">
-                                                </div>
-                                                <div class="c-artwork">
-                                                    <img src="pics/a2.jpg" alt="Art 3">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="collab-name2">Jamaica</p>
-                                        <div class="collaborator">
-                                            <div class="art-collage">
-                                                <div class="c-artworks">
-                                                    <img src="pics/a1.jpg" alt="Art 1">
-                                                    <img src="pics/a3.jpg" alt="Art 2">
-                                                </div>
-                                                <div class="c-artwork">
-                                                    <img src="pics/a2.jpg" alt="Art 3">
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Modal -->
-                        <div class="c-modal" id="c-modal">
-                            <div class="c-modal-overlay"></div>
-                            <div class="c-modal-content">
-                              <div class="carousel">
-                                <span class="nav prev">&lt;</span>
-                                <img src="" alt="Expanded Artwork" class="modal-banner">
-                                <span class="nav next">&gt;</span>
-                              </div>
+                    
+                        <!-- Collaborators Section -->
+                        <div class="collaborators">
+                            <h2>Collaborators</h2>
+                            <div class="collaborator-cards">
+                                <div class="collab-wrapper1">
+                                    <p class="collab-name1">Angel</p>
+                                    <div class="collaborator">
+                                        <div class="art-collage">
+                                            <div class="c-artworks">
+                                                <img src="pics/a1.jpg" alt="Art 1">
+                                                <img src="pics/a3.jpg" alt="Art 2">
+                                            </div>
+                                            <div class="c-artwork">
+                                                <img src="pics/a2.jpg" alt="Art 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="collab-name1">Jeralyn</p>
+                                    <div class="collaborator">
+                                        <div class="art-collage">
+                                            <div class="c-artworks">
+                                                <img src="pics/a1.jpg" alt="Art 1">
+                                                <img src="pics/a3.jpg" alt="Art 2">
+                                            </div>
+                                            <div class="c-artwork">
+                                                <img src="pics/a2.jpg" alt="Art 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="collab-name1">Genesis</p>
+                                    <div class="collaborator">
+                                        <div class="art-collage">
+                                            <div class="c-artworks">
+                                                <img src="pics/a1.jpg" alt="Art 1">
+                                                <img src="pics/a3.jpg" alt="Art 2">
+                                            </div>
+                                            <div class="c-artwork">
+                                                <img src="pics/a2.jpg" alt="Art 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collab-wrapper2">
+                                    <p class="collab-name2">Janah</p>
+                                    <div class="collaborator">
+                                        <div class="art-collage">
+                                            <div class="c-artworks">
+                                                <img src="pics/a1.jpg" alt="Art 1">
+                                                <img src="pics/a3.jpg" alt="Art 2">
+                                            </div>
+                                            <div class="c-artwork">
+                                                <img src="pics/a2.jpg" alt="Art 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="collab-name2">Jamaica</p>
+                                    <div class="collaborator">
+                                        <div class="art-collage">
+                                            <div class="c-artworks">
+                                                <img src="pics/a1.jpg" alt="Art 1">
+                                                <img src="pics/a3.jpg" alt="Art 2">
+                                            </div>
+                                            <div class="c-artwork">
+                                                <img src="pics/a2.jpg" alt="Art 3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="actions">
-                            <button class="btn approve-btn">Approve</button>
-                            <button class="btn decline-btn">Decline</button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal" id="image-modal">
+                        <button class="nav-btn left-btn">&lt;</button>
+                        <button class="nav-btn right-btn">&gt;</button>
+                        <div class="modal-content">
+                            <img src="" class="modal-image">
                         </div>
                     </div>
-                    
-                <!-- Popup Container -->
-                <div id="p-popup-container" class="p-popup">
-                    <div class="p-popup-content">
-                      <p id="p-popup-message" class="p-popup-message"></p>
-                      <div class="p-popup-actions">
-                        <button id="p-confirm-btn" class="btn p-confirm-btn">Confirm</button>
-                        <button id="p-cancel-btn" class="btn p-cancel-btn">Cancel</button>
-                      </div>
+                    <div class="actions">
+                        <button class="btn approve-btn">Approve</button>
+                        <button class="btn decline-btn">Decline</button>
                     </div>
-                </div>
+                    <!-- Popup Container -->
+                    <div id="p-popup-container" class="p-popup">
+                        <div class="p-popup-content">
+                          <p id="p-popup-message" class="p-popup-message"></p>
+                          <div class="p-popup-actions">
+                            <button id="p-confirm-btn" class="btn p-confirm-btn">Confirm</button>
+                            <button id="p-cancel-btn" class="btn p-cancel-btn">Cancel</button>
+                          </div>
+                        </div>
+                    </div>
+                </section>
             </section>
 
             <!-- SETTINGS -->

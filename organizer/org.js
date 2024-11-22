@@ -49,128 +49,160 @@ function formatDate() {
 
 document.getElementById("current-date").innerText = formatDate();
 
- 
-//DESCRIPTION (...) 
+
+//NAVIGATION BETWEEN .posts-wrapper AND .panel
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+  const panel = document.getElementById("panel"); 
+  const postsWrapper = document.querySelector(".posts-wrapper"); 
+  const headerWrapper = document.querySelector(".header-wrapper");
+  const backButton = document.querySelector(".bx-chevron-left"); 
+
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", function () {
+      if (postsWrapper && headerWrapper) {
+        postsWrapper.style.display = "none";
+        headerWrapper.style.display = "none";
+      }
+
+      if (panel) {
+        panel.style.display = "block";
+      }
+    });
+  }
 
 
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      // Hide the panel
+      if (panel) {
+        panel.style.display = "none";
+      }
+
+      // Show posts-wrapper and header-wrapper
+      if (postsWrapper && headerWrapper) {
+        postsWrapper.style.display = "block";
+        headerWrapper.style.display = "block";
+      }
+    });
+  }
+});
 
 
 //POPUP MSG FOR APPOVE & DECLINE
-const popupContainer = document.getElementById('p-popup-container');
-const popupMessage = document.getElementById('p-popup-message');
-const confirmButton = document.getElementById('p-confirm-btn');
-const cancelButton = document.getElementById('p-cancel-btn');
+document.addEventListener("DOMContentLoaded", function () {
+  const approveButtons = document.querySelectorAll(".approve-btn");
+  const declineButtons = document.querySelectorAll(".decline-btn");
 
-const approveButtons = document.querySelectorAll('.approve-btn');
-const declineButtons = document.querySelectorAll('.decline-btn');
+  const popupContainer = document.getElementById("p-popup-container");
+  const popupMessage = document.getElementById("p-popup-message");
+  const confirmButton = document.getElementById("p-confirm-btn");
+  const cancelButton = document.getElementById("p-cancel-btn");
 
-// Variables to track the selected card and action
-let selectedCard = null;
-let selectedAction = null;
+  let currentAction = ""; 
 
-for (let i = 0; i < approveButtons.length; i++) {
-    approveButtons[i].addEventListener('click', function () {
-      selectedCard = this.closest('.card');
-      selectedAction = 'approve';
-      popupMessage.textContent = 'Are you sure you want to approve this post?';
-      popupContainer.style.display = 'flex';
+  // Function to show the popup
+  function showPopup(message, action) {
+    popupMessage.textContent = message; 
+    popupContainer.style.display = "flex"; 
+    currentAction = action;
+  }
+
+  // Function to hide the popup
+  function hidePopup() {
+    popupContainer.style.display = "none";
+    currentAction = ""; 
+  }
+
+  // Add click listeners to all approve buttons
+  for (let i = 0; i < approveButtons.length; i++) {
+    approveButtons[i].addEventListener("click", function () {
+      showPopup("Are you sure you want to approve this exhibit?", "approve");
     });
-}
+  }
 
-for (let i = 0; i < declineButtons.length; i++) {
-    declineButtons[i].addEventListener('click', function () {
-      selectedCard = this.closest('.card');
-      selectedAction = 'decline';
-      popupMessage.textContent =
-        'Declining this post will ban the user for 14 days. Are you sure?';
-      popupContainer.style.display = 'flex'; 
+  // Add click listeners to all decline buttons
+  for (let i = 0; i < declineButtons.length; i++) {
+    declineButtons[i].addEventListener("click", function () {
+      showPopup("Are you sure you want to decline this exhibit?", "decline");
     });
-}
+  }
 
-// Confirm button click
-confirmButton.addEventListener('click', function () {
-    if (selectedAction === 'approve' || selectedAction === 'decline') {
-        // Remove the selected card
-        selectedCard.remove();
-
-        // Alert message
-        if (selectedAction === 'approve') {
-          alert('Post has been approved.');
-        } else if (selectedAction === 'decline') {
-          alert('Post has been declined. User banned for 14 days.');
-        }
+  // Handle confirm button click
+  confirmButton.addEventListener("click", function () {
+    if (currentAction === "approve") {
+      alert("Exhibit approved!");
+    } else if (currentAction === "decline") {
+      alert("Exhibit declined!"); 
     }
+    hidePopup(); 
+  });
 
-    // Hide the popup
-    popupContainer.style.display = 'none';
+  // Handle cancel button click
+  cancelButton.addEventListener("click", function () {
+    hidePopup();
+  });
 });
 
-// Cancel button click
-cancelButton.addEventListener('click', function () {
-    // Hide the popup
-    popupContainer.style.display = 'none';
-});
 
 
 //ADMIN & COLLAB IMG CAROUSEL
 document.addEventListener("DOMContentLoaded", function () {
-  const adminCards = document.querySelectorAll(".admin-card, .collaborator");
-  const modal = document.getElementById("modal");
-  const modalOverlay = document.querySelector(".modal-overlay");
-  const modalBanner = document.querySelector(".modal-banner");
-  const prevBtn = document.querySelector(".nav.prev");
-  const nextBtn = document.querySelector(".nav.next");
+  const adminCards = document.querySelectorAll(".admin-card, .collaborator"); // Both admin-card and collaborator
+  const modal = document.getElementById("image-modal");
+  const modalImage = modal.querySelector(".modal-image");
+  const leftBtn = modal.querySelector(".left-btn");
+  const rightBtn = modal.querySelector(".right-btn");
 
-  let images = []; // Store the images from the clicked card
-  let currentIndex = 0;
+  let currentImages = []; 
+  let currentIndex = 0;   
 
-  // Open modal when clicking on an admin card or collaborator
+  // Function to open the modal
+  function openModal(images) {
+    modal.style.display = "flex"; 
+    currentImages = images; 
+    currentIndex = 0; 
+    modalImage.src = currentImages[currentIndex].src; 
+  }
+
+  // Event listener for each admin-card or collaborator
   for (let i = 0; i < adminCards.length; i++) {
     adminCards[i].addEventListener("click", function () {
-      const imgElements = adminCards[i].querySelectorAll("img");
-      images = [];
-
-      // Collect all image sources
-      for (let j = 0; j < imgElements.length; j++) {
-        images.push(imgElements[j].src);
+      const images = adminCards[i].querySelectorAll("img"); 
+      if (images.length > 0) {
+        openModal(images); 
       }
-
-      // Set the first image in the modal
-      currentIndex = 0;
-      modalBanner.src = images[currentIndex];
-
-      // Show the modal
-      modal.style.display = "flex";
     });
   }
 
-  // Close modal when clicking the overlay
-  modalOverlay.addEventListener("click", function () {
-    modal.style.display = "none";
+  // Close the modal when clicking outside the image
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none"; 
+    }
   });
 
   // Navigate to the previous image
-  prevBtn.addEventListener("click", function () {
+  leftBtn.addEventListener("click", function () {
     if (currentIndex > 0) {
-      currentIndex--; // Move to the previous image
-      modalBanner.src = images[currentIndex];
+      currentIndex--; 
     } else {
-      // Optional: Show a message or wrap around to the last image
-      console.log("No previous image.");
+      currentIndex = currentImages.length - 1; 
     }
+    modalImage.src = currentImages[currentIndex].src; 
   });
 
   // Navigate to the next image
-  nextBtn.addEventListener("click", function () {
-    if (currentIndex < images.length - 1) {
-      currentIndex++; // Move to the next image
-      modalBanner.src = images[currentIndex];
+  rightBtn.addEventListener("click", function () {
+    if (currentIndex < currentImages.length - 1) {
+      currentIndex++;
     } else {
-      // Optional: Show a message or wrap around to the first image
-      console.log("No next image.");
+      currentIndex = 0; 
     }
+    modalImage.src = currentImages[currentIndex].src; 
   });
 });
+
 
 
 
