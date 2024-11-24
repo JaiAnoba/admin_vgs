@@ -164,20 +164,6 @@ textarea {
     color: #333;
 }
 
-/* .date-picker input[value="2024-12-01"] { */
-    /* margin-right: 60px; */
-    /* border: solid; */
-/* } */
-
-.date-picker .bx-calendar-alt {
-    position: absolute;
-    top: 50%;
-    left: 280px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
-}
-
 .graphic {
     width: 480px;
     position: relative;
