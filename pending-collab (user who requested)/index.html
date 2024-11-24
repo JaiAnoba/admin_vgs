@@ -38,12 +38,11 @@
                     <div class="input-field">
                             <i class='bx bxs-pencil'></i>
                         <div class="date-picker">
-                            <input type="date" id="exhibit-date" value="2024-12-01" disabled>
-                            <i class='bx bx-calendar-alt'></i>
+                            <input type="date" id="exhibit-date" disabled>
                         </div>
                     </div>
                 </div>
-                <img src="pics/graphic.png">
+                <img src="pics/graphic.png" class="graphic">
             </div>
 
             <div class="artworks">
@@ -131,13 +130,26 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <!-- Modal -->
+            <div class="modal" id="image-modal">
+                <button class="nav-btn left-btn">&lt;</button>
+                <button class="nav-btn right-btn">&gt;</button>
+                <div class="modal-content">
+                    <img src="" class="modal-image">
+                    <div class="replace-container">
+                        <div class="replace-text">Replace</div>
+                        <input type="file" id="replace-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+            
             <div class="footer">
                 <p>Wait for the organizer to approve your exhibit</p>
             </div>
         </div>
     </section>
-    
+    <script src="script.js"></script>
 </body>
 </html>

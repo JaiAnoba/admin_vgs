@@ -156,14 +156,18 @@ textarea {
 
 .date-picker input[type="date"] {
     width: 20%;
-    padding: 10px 40px 10px 10px; 
+    padding: 10px 15px 10px 10px; 
     border: 1px solid #ddd;
     border-radius: 13px;
     font-size: 14px;
     background: #f9f9f9;
     color: #333;
-    cursor: not-allowed; 
 }
+
+/* .date-picker input[value="2024-12-01"] { */
+    /* margin-right: 60px; */
+    /* border: solid; */
+/* } */
 
 .date-picker .bx-calendar-alt {
     position: absolute;
@@ -172,7 +176,12 @@ textarea {
     transform: translateY(-50%);
     font-size: 18px;
     color: #888;
-    pointer-events: none; 
+}
+
+.graphic {
+    width: 480px;
+    position: relative;
+    top: 30px;
 }
 
 
@@ -329,3 +338,76 @@ textarea {
     font-size: 1rem;
     color: #999;
 }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    z-index: 1010;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.replace-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.replace-text {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#replace-input {
+    display: none; 
+}
+
