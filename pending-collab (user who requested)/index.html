@@ -17,69 +17,125 @@
             <h4 class="tab solo">Solo</h4>
             <h4 class="tab collaborative active">Collaborative</h4>
         </div>
-        <div class="form">
-            <div class="form-group">
-                <label for="exhibit-title">Exhibit Title</label>
-                <div class="input-field">
-                    <i class='bx bxs-pencil'></i>
-                    <input type="text" id="exhibit-title" value="Modern Arts" disabled>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exhibit-description">Exhibit Description</label>
-                <div class="input-field1">
-                    <i class='bx bxs-pencil'></i>
-                    <textarea id="exhibit-description" disabled>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="exhibit-date">Exhibit Date</label>
-                <div class="input-field">
+        <div class="wrapper">
+            <div class="form">
+                <div class="form-group">
+                    <label for="exhibit-title">Exhibit Title</label>
+                    <div class="input-field">
                         <i class='bx bxs-pencil'></i>
-                    <div class="date-picker">
-                        <input type="date" id="exhibit-date" value="2024-12-01" disabled>
-                        <i class='bx bx-calendar-alt'></i>
+                        <input type="text" id="exhibit-title" value="Modern Arts" disabled>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="exhibit-description">Exhibit Description</label>
+                    <div class="input-field1">
+                        <i class='bx bxs-pencil'></i>
+                        <textarea id="exhibit-description" disabled>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exhibit-date">Exhibit Date</label>
+                    <div class="input-field">
+                            <i class='bx bxs-pencil'></i>
+                        <div class="date-picker">
+                            <input type="date" id="exhibit-date" value="2024-12-01" disabled>
+                            <i class='bx bx-calendar-alt'></i>
+                        </div>
+                    </div>
+                </div>
+                <img src="pics/graphic.png">
             </div>
-        </div>
-        <img src="pics/graphic.png">
 
-        <div class="artworks">
-            <div class="artwork-section">
-                <h3>Your Artworks</h3>
-                <div class="artwork-list">
-                    <img src="path/to/art1.jpg" alt="Artwork 1" class="artwork">
-                </div>
-            </div>
-            <div class="collaborators-section">
-                <h3>Collaborators</h3>
-                <div class="collaborators-list">
-                    <div class="collaborator">
-                        <img src="path/to/avatar1.jpg" alt="Angel">
-                        <span>Angel</span>
-                    </div>
-                    <div class="collaborator">
-                        <img src="path/to/avatar2.jpg" alt="Jeralyn">
-                        <span>Jeralyn</span>
-                    </div>
-                    <div class="collaborator">
-                        <img src="path/to/avatar3.jpg" alt="Genesis">
-                        <span>Genesis</span>
-                    </div>
-                    <div class="collaborator">
-                        <img src="path/to/avatar4.jpg" alt="Janah">
-                        <span>Janah</span>
-                    </div>
-                    <div class="collaborator">
-                        <img src="path/to/avatar5.jpg" alt="Jamaica">
-                        <span>Jamaica</span>
+            <div class="artworks">
+                <div class="admin">
+                    <h4>Your Artworks</h4>
+                    <div class="admin-card">
+                        <div class="art-collage">
+                            <div class="artworks">
+                                <img src="pics/a1.jpg" class="art1">
+                                <img src="pics/a3.jpg" class="art2">
+                            </div>
+                            <div class="artwork">
+                                <img src="pics/a2.jpg" alt="Art 3">
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="collaborators">
+                    <h4>Collaborators</h4>
+                    <div class="collaborator-cards">
+                        <div class="collab-wrapper1">
+                            <p class="collab-name1">Angel</p>
+                            <div class="collaborator">
+                                <div class="art-collage">
+                                    <div class="c-artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
+                                    </div>
+                                    <div class="c-artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="collab-name1">Jeralyn</p>
+                            <div class="collaborator">
+                                <div class="art-collage">
+                                    <div class="c-artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
+                                    </div>
+                                    <div class="c-artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="collab-name1">Genesis</p>
+                            <div class="collaborator">
+                                <div class="art-collage">
+                                    <div class="c-artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
+                                    </div>
+                                    <div class="c-artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collab-wrapper2">
+                            <p class="collab-name2">Janah</p>
+                            <div class="collaborator">
+                                <div class="art-collage">
+                                    <div class="c-artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
+                                    </div>
+                                    <div class="c-artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="collab-name2">Jamaica</p>
+                            <div class="collaborator">
+                                <div class="art-collage">
+                                    <div class="c-artworks">
+                                        <img src="pics/a1.jpg" alt="Art 1">
+                                        <img src="pics/a3.jpg" alt="Art 2">
+                                    </div>
+                                    <div class="c-artwork">
+                                        <img src="pics/a2.jpg" alt="Art 3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <div class="footer">
-            <p>Wait for the organizer to approve your exhibit</p>
+            <div class="footer">
+                <p>Wait for the organizer to approve your exhibit</p>
+            </div>
         </div>
     </section>
     
