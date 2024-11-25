@@ -11,12 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentImages = []; 
     let currentIndex = 0;   
 
-    // Function to open the modal and display the first image
     function openModal(images) {
         modal.style.display = "flex"; 
         currentImages = images; 
         currentIndex = 0; 
-        updateModalContent(); // Display the current image and "Replace" text
+        updateModalContent(); 
     }
 
     // Function to update the modal content (image and "Replace" text)
@@ -26,10 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Attach a click event to "Replace" text
         const replaceText = replaceContainer.querySelector(".replace-text");
         replaceText.addEventListener("click", function () {
-            replaceInput.click(); // Trigger file input
+            replaceInput.click(); 
         });
 
-        // Handle file input change
         replaceInput.addEventListener("change", function () {
             if (replaceInput.files && replaceInput.files[0]) {
                 const reader = new FileReader();
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     modalImage.src = newSrc;
                 };
 
-                reader.readAsDataURL(replaceInput.files[0]); // Read the file
+                reader.readAsDataURL(replaceInput.files[0]); 
             }
         });
     }
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         adminCards[i].addEventListener("click", function () {
             const images = adminCards[i].querySelectorAll("img"); 
             if (images.length > 0) {
-                openModal(images); // Open modal with images
+                openModal(images); 
             }
         });
     }
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             currentIndex = currentImages.length - 1; 
         }
-        updateModalContent(); // Update modal content
+        updateModalContent(); 
     });
 
     // Navigate to the next image
@@ -82,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             currentIndex = 0; 
         }
-        updateModalContent(); // Update modal content
+        updateModalContent(); 
     });
 });
 
