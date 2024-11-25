@@ -105,9 +105,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-}
-
-.clbr-cancel-request button {
+    margin-inline: auto;
     background-color: #b61616;
     color: white;
     border: none;
@@ -117,6 +115,144 @@ body {
     cursor: pointer;
 }
 
-.clbr-cancel-request button:hover {
+.clbr-cancel-request:hover {
     background-color: #cc1322;
+}
+
+/* MODAL */
+.clbr-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.clbr-modal-content {
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.clbr-modal-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.clbr-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    z-index: 1010;
+}
+
+.clbr-left-btn {
+    left: 10px;
+}
+
+.clbr-right-btn {
+    right: 10px;
+}
+
+.clbr-nav-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.clbr-replace-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.clbr-replace-text {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#clbr-replace-input {
+    display: none; 
+}
+
+/* POPUP MSG */
+#clbr-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.clbr-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.clbr-con {
+    width: 90px;
+    padding: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #b61616;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.clbr-con:hover {
+    background-color: #cc1322;
+}
+
+.clbr-can {
+    width: 90px;
+    padding: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 10px;
+    color: gray;
+    transition: background-color 0.3s ease;
+}
+
+.clbr-can:hover {
+    color: black;
+    border: 1px solid black;
+}
+
+.clbr-popup {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.clbr-popup p {
+    margin-bottom: 20px;
+    font-size: 18px;
 }

@@ -41,10 +41,35 @@
                 </div>
             </div>
 
-            <div class="clbr-cancel-request">
-                <button>Cancel Request</button>
+            <button class="clbr-cancel-request">Cancel Request</button>
+
+            <!-- Modal -->
+            <div class="clbr-modal" id="clbr-image-modal">
+                <button class="clbr-nav-btn clbr-left-btn">&lt;</button>
+                <button class="clbr-nav-btn clbr-right-btn">&gt;</button>
+                <div class="clbr-modal-content">
+                    <img src="" class="clbr-modal-image">
+                    <div class="clbr-replace-container">
+                        <div class="clbr-replace-text">Replace</div>
+                        <input type="file" id="clbr-replace-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
             </div>
+
+            <!-- Popup Overlay -->
+            <div id="clbr-popup-overlay" class="clbr-msg">
+                <div class="clbr-popup">
+                    <p>Are you sure you want to cancel as a collaborator?</p>
+                    <div class="clbr-buttons">
+                        <button class="clbr-con">Yes</button>
+                        <button class="clbr-can">No</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
