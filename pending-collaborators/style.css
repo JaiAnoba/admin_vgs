@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    align-items: center;
+}
+
+.clbr-container {
+    background-color: #fff;
+    width: 1500px;
+    height: 900px;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.clbr-content {
+    margin-top: 20px;
+} 
+
+/* Header style */
+.clbr-header {
+    width: 800px;
+    text-align: center;
+    margin-inline: auto;
+    margin-bottom: 60px;
+}
+
+.clbr-title {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.clbr-des {
+    color: #333;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Exhibit card section */
+.clbr-exhibit-section {
+    width: 850px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-block: 25px;
+    padding-inline: 30px;
+    margin-inline: auto;
+    margin-bottom: 50px;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #e8e3e3;
+    cursor: pointer;
+}
+
+.clbr-img-wrapper1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clbr-img-wrapper2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clbr-exhibit-card {
+    width: 220px;
+    height: 220px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.clbr-exhibit-card1 {
+    width: 250px;
+    height: 455px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.clbr-exhibit-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Button style */
+.clbr-cancel-request {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.clbr-cancel-request button {
+    background-color: #b61616;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.clbr-cancel-request button:hover {
+    background-color: #cc1322;
+}
