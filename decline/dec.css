@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-wrap {
+    width: 1600px;
+    padding: 20px;
+    margin-inline: auto;
+    margin-top: 20px;
+    border: solid;
+}
+
+.content-wrapper1 {
+    width: 1500px;
+    margin-inline: auto;
+    padding: 10px;
+    position: relative;
+    left: 0;
+}
+
+/* TOTAL NO. */
+.overview {
+    display: flex;
+    gap: 150px;
+    width: 700px;
+    justify-content: center;
+    margin-left: 170px;
+}
+
+.acc, .request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Stat Box */
+.stat-box {
+    background-color: #f1ecec;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 250px;
+    white-space: nowrap;
+}
+
+.stat-box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    display: inline-block;
+}
+
+.a_number, .r_number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Notification Badge */
+.a-badge, .p-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 40px;
+}
+
+.red {
+    background-color: #c91f1f;
+}
+
+.blue {
+    background-color: #3762d8;
+}
+
+.a_number p, .r_number p {
+    text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* BOXES */
+.top-artists, .best-posts, .activity {
+    background-color: #eeeeee;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    width: 850px;
+    gap: 50px;
+    position: relative;
+    left: 1090px;
+    top: -90px;
+}
+
+/* Activity Section */
+.activity {
+    width: 380px;
+    height: 360px;
+    padding: 25px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    grid-column: span 1;
+}
+
+.activity h3 {
+    text-align: center;
+}
+
+/* Best Posts */
+.best-posts {
+    width: 380px;
+    height: 350px;
+    padding: 35px;
+    margin-bottom: 40px;
+    border-radius: 30px;
+}
+
+.best-posts h3 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.post img {
+    width: 40px;
+    height: 20px;
+    margin-block: auto;
+    margin-right: -90px;
+}
+
+.post {
+    width: 250px;
+    display: flex;
+    gap: 100px;
+    margin: 0 0 40px 10px;
+}
+
+.ex-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-info p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.views {
+    display: flex;
+    align-items: center;
+    margin-block: auto;
+}
+
+.bxs-show {
+    color: #91041b;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.count {
+    font-size: 1rem;
+    color: gray;
+}
+
+/* Top Artists Section */
+.top-artists {
+    width: 1050px; 
+    height: 620px;
+    border-radius: 30px;
+    margin-top: -720px;
+    background: url('pics/WORXIST\ \(1\).png') no-repeat center center / cover;
+}
+
+.exhibit-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #91041b;
+    position: relative;
+    bottom: 730px;
+    left: 20px;
+}
+
+.top-artists img {
+    width: 1000px;
+}
+
+canvas {
+    margin-inline: auto;
+    width: 90% !important;
+    height: 90% !important;
+}
+
+
