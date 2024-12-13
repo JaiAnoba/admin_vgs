@@ -15,10 +15,39 @@
     padding: 40px;
 }
 
+.a-options {
+    width: 900px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-inline: auto;
+}
+  
+.a-option {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #555;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.a-option:hover {
+    color: #a20d0d;
+    border-bottom: 2px solid #a20d0d;
+}
+  
+
 .filter-container {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-inline: 60px;
     text-align: right;
+}
+
+.filt {
+    margin-right: 10px;
 }
 
 .filter-select {
@@ -36,7 +65,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     width: 1600px;
-    height: 790px;
+    height: 700px;
     padding: 10px;
     margin: 0 auto;
     overflow-y: auto;
@@ -44,8 +73,8 @@
 
 /* Card Styles */
 .ex-card {
-  width: 350px;
-  height: 320px;
+  width: 320px;
+  height: 300px;
   padding: 20px;
   background-color: #f1ecec;
   border-radius: 20px;
