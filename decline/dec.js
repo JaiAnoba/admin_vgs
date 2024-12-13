@@ -74,3 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const dateElement = document.querySelector(".ex-date");
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    const year = today.getFullYear();
+    const shortYear = year.toString().slice(-2);
+    const formattedDate = `${month}/${day}/${shortYear}`;
+    dateElement.textContent = formattedDate;
+  });
+  

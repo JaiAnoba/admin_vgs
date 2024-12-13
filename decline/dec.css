@@ -192,13 +192,23 @@
     background: url('pics/WORXIST\ \(1\).png') no-repeat center center / cover;
 }
 
-.exhibit-text {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #91041b;
+.on-header {
+    width: 980px;
+    display: flex;
+    justify-content: space-between;
     position: relative;
     bottom: 730px;
-    left: 20px;
+    left: 30px;
+}
+
+.exhibit-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #91041b;
+}
+
+.ex-date {
+    font-size: 0.9rem;
 }
 
 .top-artists img {
