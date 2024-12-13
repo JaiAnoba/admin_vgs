@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="a-exhibits">
+        <div class="filter-container">
+            <label for="year">Filter by:</label> 
+            <select id="year" class="filter-select">
+              <option value="" disabled selected>Select Year</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+            </select>
+            <select id="month" class="filter-select hidden">
+              <option value="" disabled selected>Select Month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+        </div>
+        
+        <div class="ex-wrapper" >
+          <div class="ex-card">
+              <img src="pics/banner.png" class="banner-pic">
+              <div class="ex-card-content">
+                  <p class="ex-art-title">(Title)</p>
+                  <p class="ex-description">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+              </div>
+              <i class='bx bxs-show' ><p class="ex-views">0</p></i>
+          </div>
+    </section>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
